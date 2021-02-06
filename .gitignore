@@ -1,0 +1,8 @@
+
+# Data
+Output/
+Benchmarks/
+
+# Snakemake
+.snakemake
+solvers.json

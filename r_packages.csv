@@ -1,0 +1,423 @@
+"","Package","LibPath","Version","Priority","Depends","Imports","LinkingTo","Suggests","Enhances","License","License_is_FOSS","License_restricts_use","OS_type","MD5sum","NeedsCompilation","Built"
+"annotate","annotate","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.68.0",NA,"R (>= 2.10), AnnotationDbi (>= 1.27.5), XML","Biobase, DBI, xtable, graphics, utils, stats, methods,
+BiocGenerics (>= 0.13.8), httr",NA,"hgu95av2.db, genefilter, Biostrings (>= 2.25.10), IRanges,
+rae230a.db, rae230aprobe, tkWidgets, GO.db, org.Hs.eg.db,
+org.Mm.eg.db, hom.Hs.inp.db, humanCHRLOC, Rgraphviz, RUnit,",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"AnnotationDbi","AnnotationDbi","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.52.0",NA,"R (>= 2.7.0), methods, utils, stats4, BiocGenerics (>=
+0.29.2), Biobase (>= 1.17.0), IRanges","DBI, RSQLite, S4Vectors (>= 0.9.25)",NA,"hgu95av2.db, GO.db, org.Sc.sgd.db, org.At.tair.db, KEGG.db,
+RUnit, TxDb.Hsapiens.UCSC.hg19.knownGene, hom.Hs.inp.db,
+org.Hs.eg.db, reactome.db, AnnotationForge, graph,
+EnsDb.Hsapiens.v75, BiocStyle, knitr",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"askpass","askpass","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1",NA,NA,"sys (>= 2.1)",NA,"testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"assertthat","assertthat","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2.1",NA,NA,"tools",NA,"testthat, covr",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.0"
+"backports","backports","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.1",NA,"R (>= 3.0.0)",NA,NA,NA,NA,"GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"base","base","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,NA,NA,"methods",NA,"Part of R 4.0.3",NA,NA,NA,NA,NA,"4.0.3"
+"base64enc","base64enc","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.1-3",NA,"R (>= 2.9.0)",NA,NA,NA,"png","GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.0"
+"bcellViper","bcellViper","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.26.0",NA,"R(>= 2.14.0), Biobase, methods",NA,NA,NA,NA,"GPL (>=2)",NA,NA,NA,NA,"no","4.0.3"
+"BH","BH","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.75.0-0",NA,NA,NA,NA,NA,NA,"BSL-1.0",NA,NA,NA,NA,"no","4.0.3"
+"Biobase","Biobase","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.50.0",NA,"R (>= 2.10), BiocGenerics (>= 0.27.1), utils","methods",NA,"tools, tkWidgets, ALL, RUnit, golubEsets",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"BiocFileCache","BiocFileCache","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.14.0",NA,"R (>= 3.4.0), dbplyr (>= 1.0.0)","methods, stats, utils, dplyr, RSQLite, DBI, rappdirs, curl,
+httr",NA,"testthat, knitr, BiocStyle, rmarkdown, rtracklayer",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"BiocGenerics","BiocGenerics","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.36.0",NA,"R (>= 4.0.0), methods, utils, graphics, stats, parallel","methods, utils, graphics, stats, parallel",NA,"Biobase, S4Vectors, IRanges, GenomicRanges, DelayedArray,
+Biostrings, Rsamtools, AnnotationDbi, affy, affyPLM, DESeq2,
+flowClust, MSnbase, annotate, RUnit",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"BiocManager","BiocManager","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.30.10",NA,NA,"utils",NA,"BiocStyle, BiocVersion, remotes, testthat, withr, curl, knitr",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"BiocParallel","BiocParallel","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.24.1",NA,"methods","stats, utils, futile.logger, parallel, snow","BH","BiocGenerics, tools, foreach, BatchJobs, BBmisc, doParallel,
+Rmpi, GenomicRanges, RNAseqData.HNRNPC.bam.chr14,
+TxDb.Hsapiens.UCSC.hg19.knownGene, VariantAnnotation,
+Rsamtools, GenomicAlignments, ShortRead, codetools, RUnit,
+BiocStyle, knitr, batchtools, data.table",NA,"GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"BiocVersion","BiocVersion","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.12.0",NA,"R (>= 4.0.0)",NA,NA,NA,NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"bit","bit","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.4",NA,"R (>= 2.9.2)",NA,NA,"testthat (>= 0.11.0), roxygen2, knitr, rmarkdown,
+microbenchmark, bit64 (>= 4.0.0), ff (>= 4.0.0)",NA,"GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"bit64","bit64","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.5",NA,"R (>= 3.0.1), bit (>= 4.0.0), utils, methods, stats",NA,NA,NA,NA,"GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"bitops","bitops","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0-6",NA,NA,NA,NA,NA,NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"blob","blob","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.1",NA,NA,"methods, rlang, vctrs (>= 0.2.1)",NA,"covr, crayon, pillar (>= 1.2.1), testthat",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"brew","brew","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0-6",NA,NA,NA,NA,NA,NA,"GPL-2",NA,NA,NA,NA,NA,"4.0.3"
+"brio","brio","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,NA,NA,NA,"testthat (>= 2.1.0), covr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"broom","broom","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.7.4",NA,"R (>= 3.1)","backports, dplyr (>= 1.0.0), ellipsis, generics (>= 0.0.2),
+glue, methods, purrr, rlang, stringr, tibble (>= 3.0.0), tidyr
+(>= 1.0.0)",NA,"AER, akima, AUC, bbmle, betareg, biglm, binGroup, boot,
+btergm, car, caret, cluster, cmprsk, coda, covr, drc, e1071,
+emmeans, epiR, ergm (>= 3.10.4), fixest (>= 0.5.0), gam (>=
+1.15), gamlss, gamlss.data, gamlss.dist, gee, geepack, ggplot2,
+glmnet, glmnetUtils, gmm, Hmisc, irlba, joineRML, Kendall,
+knitr, ks, Lahman, lavaan, leaps, lfe, lm.beta, lme4, lmodel2,
+lmtest (>= 0.9.38), lsmeans, maps, maptools, margins, MASS,
+Matrix, mclust, mediation, metafor, mfx, mgcv, mlogit,
+modeldata, modeltests, muhaz, multcomp, network, nnet, orcutt
+(>= 2.2), ordinal, plm, poLCA, psych, quantreg, Rchoice, rgeos,
+rmarkdown, robust, robustbase, rsample, sandwich, sp, spdep,
+spatialreg, speedglm, spelling, survey, survival, systemfit,
+testthat (>= 2.1.0), tseries, vars, zoo",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"cachem","cachem","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.1",NA,NA,"rlang, fastmap",NA,"testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"callr","callr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.5.1",NA,NA,"processx (>= 3.4.4), R6, utils",NA,"cli, covr, crayon, fansi, pingr, ps, rprojroot, spelling,
+testthat, tibble, withr (>= 2.3.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"CARNIVAL","CARNIVAL","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,"R (>= 4.0)","doParallel, readr, viper, AnnotationDbi, Category, ggplot2,
+UniProt.ws, lpSolve, igraph",NA,"knitr, readxl, testthat (>= 2.1.0)",NA,"Apache License (== 3.0) | file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"Category","Category","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.56.0",NA,"methods, stats4, BiocGenerics, AnnotationDbi, Biobase, Matrix","utils, stats, graph, RBGL, GSEABase, genefilter, annotate, DBI",NA,"EBarrays, ALL, Rgraphviz, RColorBrewer, xtable (>= 1.4-6),
+hgu95av2.db, KEGG.db, karyoploteR, geneplotter, limma, lattice,
+RUnit, org.Sc.sgd.db, GOstats, GO.db",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"cellranger","cellranger","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.0",NA,"R (>= 3.0.0)","rematch, tibble",NA,"covr, testthat (>= 1.0.0), knitr, rmarkdown",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"class","class","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","7.3-18","recommended","R (>= 3.0.0), stats, utils","MASS",NA,NA,NA,"GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"cli","cli","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.2.0",NA,"R (>= 2.10)","assertthat, crayon (>= 1.3.4), glue, methods, utils, fansi",NA,"callr, covr, htmlwidgets, knitr, mockery, ps (>= 1.3.4.9000),
+rmarkdown, rstudioapi, prettycode (>= 1.1.0), testthat, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"clipr","clipr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.7.1",NA,NA,"utils",NA,"covr, knitr, rmarkdown, rstudioapi (>= 0.5), testthat (>=
+2.0.0)",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"codetools","codetools","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2-18","recommended","R (>= 2.1)",NA,NA,NA,NA,"GPL",NA,NA,NA,NA,"no","4.0.3"
+"colorspace","colorspace","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0-0",NA,"R (>= 3.0.0), methods","graphics, grDevices, stats",NA,"datasets, utils, KernSmooth, MASS, kernlab, mvtnorm, vcd,
+tcltk, shiny, shinyjs, ggplot2, dplyr, scales, grid, png, jpeg,
+knitr, rmarkdown, RColorBrewer, rcartocolor, scico, viridis,
+wesanderson",NA,"BSD_3_clause + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"commonmark","commonmark","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.7",NA,NA,NA,NA,"curl, testthat, xml2",NA,"BSD_2_clause + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"compiler","compiler","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,NA,NA,NA,NA,"Part of R 4.0.3",NA,NA,NA,NA,NA,"4.0.3"
+"covr","covr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.5.1",NA,"R (>= 3.1.0), methods","digest, stats, utils, jsonlite, rex, httr, crayon, withr (>=
+1.0.2), yaml",NA,"R6, curl, knitr, rmarkdown, htmltools, DT (>= 0.2), testthat,
+rlang, rstudioapi (>= 0.2), xml2 (>= 1.0.0), parallel, memoise,
+mockery",NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"cpp11","cpp11","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2.6",NA,NA,NA,NA,"bench, brio, callr, cli, covr, decor, desc, ggplot2, glue,
+knitr, lobstr, mockery, progress, rmarkdown, scales, testthat,
+tibble, utils, vctrs, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"crayon","crayon","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.0",NA,NA,"grDevices, methods, utils",NA,"mockery, rstudioapi, testthat, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"credentials","credentials","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.3.0",NA,NA,"openssl (>= 1.3), sys (>= 2.1), curl, jsonlite, askpass",NA,"testthat, knitr, rmarkdown",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"crosstalk","crosstalk","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,NA,"htmltools (>= 0.3.6), jsonlite, lazyeval, R6",NA,"shiny, ggplot2, testthat (>= 2.1.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"curl","curl","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.3",NA,"R (>= 3.0.0)",NA,NA,"spelling, testthat (>= 1.0.0), knitr, jsonlite, rmarkdown,
+magrittr, httpuv (>= 1.4.4), webutils",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"datasets","datasets","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,NA,NA,NA,NA,"Part of R 4.0.3",NA,NA,NA,NA,NA,"4.0.3"
+"DBI","DBI","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,"methods, R (>= 3.0.0)",NA,NA,"blob, covr, dbplyr, dplyr, glue, hms, knitr, magrittr,
+rmarkdown, rprojroot, RMariaDB, RSQLite (>= 1.1-2), testthat,
+xml2",NA,"LGPL (>= 2.1)",NA,NA,NA,NA,"no","4.0.3"
+"dbplyr","dbplyr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.0",NA,"R (>= 3.1)","assertthat (>= 0.2.0), DBI (>= 1.0.0), dplyr (>= 0.8.0), glue
+(>= 1.2.0), lifecycle, magrittr, methods, purrr (>= 0.2.5), R6
+(>= 2.2.2), rlang (>= 0.2.0), tibble (>= 1.4.2), tidyselect (>=
+0.2.4), blob (>= 1.2.0), utils, withr",NA,"bit64, covr, knitr, Lahman, nycflights13, odbc, RMariaDB (>=
+1.0.2), rmarkdown, RPostgres (>= 1.1.3), RPostgreSQL, RSQLite
+(>= 2.1.0), testthat (>= 3.0.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"DelayedArray","DelayedArray","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.16.1",NA,"R (>= 3.4), methods, stats4, Matrix, BiocGenerics (>= 0.31.5),
+MatrixGenerics (>= 1.1.3), S4Vectors (>= 0.27.2), IRanges (>=
+2.17.3)","stats","S4Vectors","BiocParallel, HDF5Array (>= 1.17.12), genefilter,
+SummarizedExperiment, airway, pryr, DelayedMatrixStats, knitr,
+BiocStyle, RUnit",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"desc","desc","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,"R (>= 3.1.0)","assertthat, utils, R6, crayon, rprojroot",NA,"covr, testthat, whoami, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"DESeq2","DESeq2","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.30.0",NA,"S4Vectors (>= 0.23.18), IRanges, GenomicRanges,
+SummarizedExperiment (>= 1.1.6)","BiocGenerics (>= 0.7.5), Biobase, BiocParallel, genefilter,
+methods, stats4, locfit, geneplotter, ggplot2, Rcpp (>= 0.11.0)","Rcpp, RcppArmadillo","testthat, knitr, rmarkdown, vsn, pheatmap, RColorBrewer,
+apeglm, ashr, tximport, tximeta, tximportData, readr, pbapply,
+airway, pasilla (>= 0.2.10), glmGamPoi, BiocManager",NA,"LGPL (>= 3)",NA,NA,NA,NA,"yes","4.0.3"
+"devtools","devtools","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.3.2",NA,"R (>= 3.0.2), usethis (>= 1.6.3)","callr (>= 3.4.4), cli (>= 2.0.2), covr (>= 3.5.1), desc (>=
+1.2.0), DT (>= 0.15), ellipsis (>= 0.3.1), httr (>= 1.4.2),
+jsonlite (>= 1.7.1), memoise (>= 1.1.0), pkgbuild (>= 1.1.0),
+pkgload (>= 1.1.0), rcmdcheck (>= 1.3.3), remotes (>= 2.2.0),
+rlang (>= 0.4.7), roxygen2 (>= 7.1.1), rstudioapi (>= 0.11),
+rversions (>= 2.0.2), sessioninfo (>= 1.1.1), stats, testthat
+(>= 2.3.2), tools, utils, withr (>= 2.2.0)",NA,"BiocManager (>= 1.30.10), curl (>= 4.3), digest (>= 0.6.25),
+foghorn (>= 1.3.1), gmailr (>= 1.0.0), knitr (>= 1.29), lintr
+(>= 2.0.1), MASS, mockery (>= 0.4.2), pingr (>= 2.0.1), pkgdown
+(>= 1.6.1), rhub (>= 1.1.1), rmarkdown (>= 2.3), spelling (>=
+2.1)",NA,"GPL (>= 2)",NA,NA,NA,NA,"no","4.0.3"
+"diffobj","diffobj","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.3",NA,"R (>= 3.1.0)","crayon (>= 1.3.2), tools, methods, utils, stats",NA,"knitr, rmarkdown",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"digest","digest","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.6.27",NA,"R (>= 3.3.0)","utils",NA,"tinytest, knitr, rmarkdown, minidown",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"doParallel","doParallel","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.16",NA,"R (>= 2.14.0), foreach(>= 1.2.0), iterators(>= 1.0.0),
+parallel, utils",NA,NA,"caret, mlbench, rpart, RUnit","compiler","GPL-2",NA,NA,NA,NA,"no","4.0.3"
+"dorothea","dorothea","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,"R (>= 4.0)","dplyr, magrittr, bcellViper, viper",NA,"Biobase, BiocStyle, knitr, pheatmap, pkgdown, Seurat,
+SingleCellExperiment, SummarizedExperiment, testthat (>=
+2.1.0), tibble, tidyr, utils",NA,"GPL-3 + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"dplyr","dplyr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.3",NA,"R (>= 3.3.0)","ellipsis, generics, glue (>= 1.3.2), lifecycle (>= 0.2.0),
+magrittr (>= 1.5), methods, R6, rlang (>= 0.4.9), tibble (>=
+2.1.3), tidyselect (>= 1.1.0), utils, vctrs (>= 0.3.5)",NA,"bench, broom, callr, covr, DBI, dbplyr (>= 1.4.3), knitr,
+Lahman, lobstr, microbenchmark, nycflights13, purrr, rmarkdown,
+RMySQL, RPostgreSQL, RSQLite, testthat (>= 2.1.0), withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"DT","DT","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.17",NA,NA,"htmltools (>= 0.3.6), htmlwidgets (>= 1.3), jsonlite (>=
+0.9.16), magrittr, crosstalk, promises",NA,"knitr (>= 1.8), rmarkdown, shiny (>= 1.2.0), testit",NA,"GPL-3 | file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"e1071","e1071","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.7-4",NA,NA,"graphics, grDevices, class, stats, methods, utils",NA,"cluster, mlbench, nnet, randomForest, rpart, SparseM, xtable,
+Matrix, MASS, slam",NA,"GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"ellipsis","ellipsis","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.1",NA,"R (>= 3.2)","rlang (>= 0.3.0)",NA,"covr, testthat",NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.0"
+"evaluate","evaluate","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.14",NA,"R (>= 3.0.2)","methods",NA,"testthat, lattice, ggplot2",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.0"
+"fansi","fansi","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.4.2",NA,"R (>= 3.1.0)",NA,NA,"unitizer, knitr, rmarkdown",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"farver","farver","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.3",NA,NA,NA,NA,"testthat (>= 2.1.0), covr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"fastmap","fastmap","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.0",NA,NA,NA,NA,"testthat (>= 2.1.1)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"forcats","forcats","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.5.1",NA,"R (>= 3.2)","ellipsis, magrittr, rlang, tibble",NA,"covr, dplyr, ggplot2, knitr, readr, rmarkdown, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"foreach","foreach","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.5.1",NA,"R (>= 2.5.0)","codetools, utils, iterators",NA,"randomForest, doMC, doParallel, testthat, knitr, rmarkdown",NA,"Apache License (== 2.0)",NA,NA,NA,NA,"no","4.0.3"
+"formatR","formatR","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.7",NA,"R (>= 3.0.2)",NA,NA,"codetools, shiny, testit, rmarkdown, knitr",NA,"GPL",NA,NA,NA,NA,"no","4.0.3"
+"fs","fs","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.5.0",NA,"R (>= 3.1)","methods",NA,"testthat, covr, pillar (>= 1.0.0), tibble (>= 1.1.0), crayon,
+rmarkdown, knitr, withr, spelling, vctrs (>= 0.3.0)",NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"futile.logger","futile.logger","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.3",NA,"R (>= 3.0.0)","utils, lambda.r (>= 1.1.0), futile.options",NA,"testthat, jsonlite",NA,"LGPL-3",NA,NA,NA,NA,"no","4.0.3"
+"futile.options","futile.options","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.1",NA,"R (>= 2.8.0)",NA,NA,NA,NA,"LGPL-3",NA,NA,NA,NA,"no","4.0.3"
+"genefilter","genefilter","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.72.1",NA,NA,"BiocGenerics (>= 0.31.2), AnnotationDbi, annotate, Biobase,
+graphics, methods, stats, survival",NA,"class, hgu95av2.db, tkWidgets, ALL, ROC, RColorBrewer,
+BiocStyle, knitr",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"geneplotter","geneplotter","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.68.0",NA,"R (>= 2.10), methods, Biobase, BiocGenerics, lattice, annotate","AnnotationDbi, graphics, grDevices, grid, RColorBrewer, stats,
+utils",NA,"Rgraphviz, fibroEset, hgu95av2.db, hu6800.db, hgu133a.db",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"generics","generics","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.1.0",NA,"R (>= 3.1)","methods",NA,"covr, pkgload, testthat, tibble",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"GenomeInfoDb","GenomeInfoDb","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.26.2",NA,"R (>= 3.1), methods, BiocGenerics (>= 0.13.8), S4Vectors (>=
+0.25.12), IRanges (>= 2.13.12)","stats, stats4, utils, RCurl, GenomeInfoDbData",NA,"GenomicRanges, Rsamtools, GenomicAlignments, GenomicFeatures,
+TxDb.Dmelanogaster.UCSC.dm3.ensGene, BSgenome,
+BSgenome.Scerevisiae.UCSC.sacCer2, BSgenome.Celegans.UCSC.ce2,
+BSgenome.Hsapiens.NCBI.GRCh38, RUnit, BiocStyle, knitr",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"GenomeInfoDbData","GenomeInfoDbData","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.4",NA,"R (>= 3.5.0)",NA,NA,NA,NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"GenomicRanges","GenomicRanges","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.42.0",NA,"R (>= 2.10), methods, stats4, BiocGenerics (>= 0.25.3),
+S4Vectors (>= 0.27.12), IRanges (>= 2.23.9), GenomeInfoDb (>=
+1.15.2)","utils, stats, XVector (>= 0.29.2)","S4Vectors, IRanges","Matrix, Biobase, AnnotationDbi, annotate, Biostrings (>=
+2.25.3), SummarizedExperiment (>= 0.1.5), Rsamtools (>=
+1.13.53), GenomicAlignments, rtracklayer, BSgenome,
+GenomicFeatures, Gviz, VariantAnnotation, AnnotationHub,
+DESeq2, DEXSeq, edgeR, KEGGgraph, RNAseqData.HNRNPC.bam.chr14,
+pasillaBamSubset, KEGG.db, hgu95av2.db, hgu95av2probe,
+BSgenome.Scerevisiae.UCSC.sacCer2, BSgenome.Hsapiens.UCSC.hg19,
+BSgenome.Mmusculus.UCSC.mm10,
+TxDb.Athaliana.BioMart.plantsmart22,
+TxDb.Dmelanogaster.UCSC.dm3.ensGene,
+TxDb.Hsapiens.UCSC.hg19.knownGene,
+TxDb.Mmusculus.UCSC.mm10.knownGene, RUnit, digest, knitr,
+BiocStyle",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"gert","gert","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.0",NA,NA,"askpass, credentials (>= 1.2.1), openssl (>= 1.4.1),
+rstudioapi (>= 0.11), sys, zip (>= 2.1.0)",NA,"spelling, knitr, rmarkdown, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"ggplot2","ggplot2","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.3.3",NA,"R (>= 3.2)","digest, glue, grDevices, grid, gtable (>= 0.1.1), isoband,
+MASS, mgcv, rlang (>= 0.3.0), scales (>= 0.5.0), stats, tibble,
+withr (>= 2.0.0)",NA,"covr, dplyr, ggplot2movies, hexbin, Hmisc, knitr, lattice,
+mapproj, maps, maptools, multcomp, munsell, nlme, profvis,
+quantreg, RColorBrewer, rgeos, rmarkdown, rpart, sf (>= 0.7-3),
+svglite (>= 1.2.0.9001), testthat (>= 2.1.0), vdiffr (>= 0.3.0)","sp","MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"ggrepel","ggrepel","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.9.1",NA,"R (>= 3.0.0), ggplot2 (>= 2.2.0)","grid, Rcpp, rlang (>= 0.3.0), scales (>= 0.5.0)","Rcpp","knitr, rmarkdown, testthat, gridExtra, devtools, prettydoc,
+ggbeeswarm, dplyr, magrittr, readr, stringr",NA,"GPL-3 | file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"gh","gh","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,NA,"cli (>= 2.0.1), gitcreds, httr (>= 1.2), ini, jsonlite",NA,"covr, knitr, rmarkdown, rprojroot, spelling, testthat (>=
+2.3.2), withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"gitcreds","gitcreds","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.1.1",NA,NA,NA,NA,"codetools, testthat, knitr, mockery, oskeyring, rmarkdown,
+withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"glue","glue","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.2",NA,"R (>= 3.2)","methods",NA,"testthat, covr, magrittr, crayon, knitr, rmarkdown, DBI,
+RSQLite, R.utils, forcats, microbenchmark, rprintf, stringr,
+ggplot2, dplyr, withr, vctrs (>= 0.3.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"graph","graph","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.68.0",NA,"R (>= 2.10), methods, BiocGenerics (>= 0.13.11)","stats, stats4, utils",NA,"SparseM (>= 0.36), XML, RBGL, RUnit, cluster","Rgraphviz","Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"graphics","graphics","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"grDevices",NA,NA,NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"grDevices","grDevices","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,NA,NA,"KernSmooth",NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"grid","grid","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"grDevices, utils",NA,"lattice",NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"gridExtra","gridExtra","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.3",NA,NA,"gtable, grid, grDevices, graphics, utils",NA,"ggplot2, egg, lattice, knitr, testthat",NA,"GPL (>= 2)",NA,NA,NA,NA,"no","4.0.3"
+"GSEABase","GSEABase","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.52.1",NA,"R (>= 2.6.0), BiocGenerics (>= 0.13.8), Biobase (>= 2.17.8),
+annotate (>= 1.45.3), methods, graph (>= 1.37.2)","AnnotationDbi, XML",NA,"hgu95av2.db, GO.db, org.Hs.eg.db, Rgraphviz, ReportingTools,
+testthat, BiocStyle, knitr",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"gtable","gtable","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.0",NA,"R (>= 3.0)","grid",NA,"covr, testthat, knitr, rmarkdown, ggplot2, profvis",NA,"GPL-2",NA,NA,NA,NA,"no","4.0.3"
+"haven","haven","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.3.1",NA,"R (>= 3.2)","forcats (>= 0.2.0), hms, methods, Rcpp (>= 0.11.4), readr (>=
+0.1.0), rlang (>= 0.4.0), tibble, tidyselect, vctrs (>= 0.3.0)","Rcpp","covr, fs, knitr, rmarkdown, testthat, pillar (>= 1.4.0), cli,
+crayon",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"highr","highr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.8",NA,"R (>= 3.2.3)",NA,NA,"knitr, testit",NA,"GPL",NA,NA,NA,NA,"no","4.0.3"
+"hms","hms","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.0",NA,NA,"ellipsis, lifecycle, methods, pkgconfig, rlang, vctrs (>=
+0.2.1)",NA,"crayon, lubridate, pillar (>= 1.1.0), testthat (>= 3.0.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"htmltools","htmltools","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.5.1.1",NA,"R (>= 2.14.1)","utils, digest, grDevices, base64enc, rlang",NA,"markdown, testthat, withr, Cairo, ragg, shiny","knitr","GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"htmlwidgets","htmlwidgets","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.5.3",NA,NA,"grDevices, htmltools (>= 0.3), jsonlite (>= 0.9.16), yaml",NA,"knitr (>= 1.8), rmarkdown, testthat","shiny (>= 1.1)","MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"httr","httr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.2",NA,"R (>= 3.2)","curl (>= 3.0.0), jsonlite, mime, openssl (>= 0.8), R6",NA,"covr, httpuv, jpeg, knitr, png, readr, rmarkdown, testthat
+(>= 0.8.0), xml2",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"igraph","igraph","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.6",NA,"methods","graphics, grDevices, magrittr, Matrix, pkgconfig (>= 2.0.0),
+stats, utils",NA,"ape, digest, graph, igraphdata, rgl, scales, stats4, tcltk,
+testthat, withr",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"ini","ini","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.1",NA,NA,NA,NA,"testthat",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"IRanges","IRanges","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.24.1",NA,"R (>= 4.0.0), methods, utils, stats, BiocGenerics (>= 0.36.0),
+S4Vectors (>= 0.27.12)","stats4","S4Vectors","XVector, GenomicRanges, Rsamtools, GenomicAlignments,
+GenomicFeatures, BSgenome.Celegans.UCSC.ce2, pasillaBamSubset,
+RUnit, BiocStyle",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"IRdisplay","IRdisplay","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0",NA,"R (>= 3.0.1)","methods,
+repr",NA,"testthat,
+withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,NA,"4.0.3"
+"IRkernel","IRkernel","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,"R (>= 3.2.0)","repr (>= 0.4.99), methods, evaluate (>= 0.10), IRdisplay (>=
+0.3.0.9999), pbdZMQ (>= 0.2-1), crayon, jsonlite (>= 0.9.6),
+uuid, digest",NA,"testthat, roxygen2",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.2"
+"isoband","isoband","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2.3",NA,NA,"grid, utils","testthat","covr, ggplot2, knitr, magick, microbenchmark, rmarkdown, sf,
+testthat, xml2",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"iterators","iterators","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.13",NA,"R (>= 2.5.0), utils",NA,NA,"RUnit, foreach",NA,"Apache License (== 2.0)",NA,NA,NA,NA,"no","4.0.3"
+"jsonlite","jsonlite","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.7.2",NA,"methods",NA,NA,"httr, curl, plyr, testthat, knitr, rmarkdown, R.rsp, sf",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"kernlab","kernlab","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.9-29",NA,"R (>= 2.10)","methods, stats, grDevices, graphics",NA,NA,NA,"GPL-2",NA,NA,NA,NA,"yes","4.0.3"
+"KernSmooth","KernSmooth","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.23-18","recommended","R (>= 2.5.0), stats",NA,NA,"MASS",NA,"Unlimited",NA,NA,NA,NA,"yes","4.0.3"
+"knitr","knitr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.31",NA,"R (>= 3.2.3)","evaluate (>= 0.10), highr, methods, markdown, stringr (>=
+0.6), yaml (>= 2.1.19), xfun (>= 0.19), tools",NA,"formatR, testit, digest, rgl (>= 0.95.1201), codetools,
+rmarkdown, htmlwidgets (>= 0.7), webshot, tikzDevice (>= 0.10),
+tinytex, reticulate (>= 1.4), JuliaCall (>= 0.11.1), magick,
+png, jpeg, gifski, xml2 (>= 1.2.0), httr, DBI (>= 0.4-1),
+showtext, tibble, sass, ragg, styler (>= 1.2.0)",NA,"GPL",NA,NA,NA,NA,"no","4.0.3"
+"labeling","labeling","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.4.2",NA,NA,"stats, graphics",NA,NA,NA,"MIT + file LICENSE | Unlimited",NA,NA,NA,NA,"no","4.0.3"
+"lambda.r","lambda.r","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.4",NA,"R (>= 3.0.0)","formatR",NA,"testit",NA,"LGPL-3",NA,NA,NA,NA,"no","4.0.3"
+"later","later","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.0.1",NA,NA,"Rcpp (>= 0.12.9), rlang","Rcpp, BH","knitr, rmarkdown, testthat",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"lattice","lattice","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.20-41","recommended","R (>= 3.0.0)","grid, grDevices, graphics, stats, utils",NA,"KernSmooth, MASS, latticeExtra","chron","GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"lazyeval","lazyeval","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2.2",NA,"R (>= 3.1.0)",NA,NA,"knitr, rmarkdown (>= 0.2.65), testthat, covr",NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"lifecycle","lifecycle","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2.0",NA,"R (>= 3.2)","glue, rlang (>= 0.4.0)",NA,"covr, crayon, knitr, rmarkdown, testthat (>= 2.1.0)",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.0"
+"locfit","locfit","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.5-9.4",NA,"R (>= 3.5.0)","lattice",NA,"interp, gam",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"lpSolve","lpSolve","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","5.6.15",NA,NA,NA,NA,NA,NA,"LGPL-2",NA,NA,NA,NA,"yes","4.0.3"
+"lubridate","lubridate","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.7.9.2",NA,"methods, R (>= 3.2)","generics, Rcpp (>= 0.12.13)","Rcpp","covr, knitr, testthat (>= 2.1.0), vctrs (>= 0.3.0), rmarkdown","chron, timeDate, tis, zoo","GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"magrittr","magrittr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.1",NA,NA,NA,NA,"covr, knitr, rlang, rmarkdown, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"markdown","markdown","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1",NA,"R (>= 2.11.1)","utils, xfun, mime (>= 0.3)",NA,"knitr, RCurl",NA,"GPL-2",NA,NA,NA,NA,"yes","4.0.3"
+"MASS","MASS","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","7.3-53","recommended","R (>= 3.1.0), grDevices, graphics, stats, utils","methods",NA,"lattice, nlme, nnet, survival",NA,"GPL-2 | GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"Matrix","Matrix","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.3-2","recommended","R (>= 3.6.0)","methods, graphics, grid, stats, utils, lattice",NA,"expm, MASS","MatrixModels, graph, SparseM, sfsmisc, igraph, maptools, sp,
+spdep","GPL (>= 2) | file LICENCE",NA,NA,NA,NA,"yes","4.0.3"
+"MatrixGenerics","MatrixGenerics","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,"matrixStats (>= 0.57.0)","methods",NA,"sparseMatrixStats, DelayedMatrixStats, SummarizedExperiment,
+testthat (>= 2.1.0)",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"matrixStats","matrixStats","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.58.0",NA,"R (>= 2.12.0)",NA,NA,"base64enc, ggplot2, knitr, microbenchmark, R.devices, R.rsp",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"memoise","memoise","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.0",NA,NA,"rlang (>= 0.4.10), cachem",NA,"digest, aws.s3, covr, googleAuthR, googleCloudStorageR, httr,
+testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"methods","methods","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"utils, stats",NA,"codetools",NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"mgcv","mgcv","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.8-33","recommended","R (>= 2.14.0), nlme (>= 3.1-64)","methods, stats, graphics, Matrix, splines, utils",NA,"parallel, survival, MASS",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"mime","mime","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.9",NA,NA,"tools",NA,NA,NA,"GPL",NA,NA,NA,NA,"yes","4.0.3"
+"mixtools","mixtools","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,"R (>= 3.5.0)","kernlab, MASS, segmented, stats, survival",NA,NA,NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"modelr","modelr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.1.8",NA,"R (>= 3.2)","broom, magrittr, purrr (>= 0.2.2), rlang (>= 0.2.0), tibble,
+tidyr (>= 0.8.0), tidyselect, vctrs",NA,"compiler, covr, ggplot2, testthat",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"munsell","munsell","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.5.0",NA,NA,"colorspace, methods",NA,"ggplot2, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"nlme","nlme","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.1-151","recommended","R (>= 3.4.0)","graphics, stats, utils, lattice",NA,"Hmisc, MASS",NA,"GPL (>= 2) | file LICENCE",NA,NA,NA,NA,"yes","4.0.3"
+"OmnipathR","OmnipathR","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.0",NA,"R(>= 4.0), igraph, graphics, methods, utils, jsonlite","dplyr, stats, rlang, tidyr",NA,"dnet, gprofiler2, BiocStyle, testthat, knitr, rmarkdown,
+ggplot2, ggraph",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"openssl","openssl","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.3",NA,NA,"askpass",NA,"testthat (>= 2.1.0), digest, knitr, rmarkdown, jsonlite,
+jose, sodium",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"openxlsx","openxlsx","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.2.3",NA,"R (>= 3.3.0)","grDevices, methods, Rcpp, stats, utils, zip, stringi","Rcpp","knitr, testthat, roxygen2, rmarkdown",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"parallel","parallel","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"tools, compiler",NA,"methods","snow, nws, Rmpi","Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"pbdZMQ","pbdZMQ","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3-4",NA,"R (>= 3.5.0)",NA,NA,NA,NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"pheatmap","pheatmap","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.12",NA,"R (>= 2.0)","grid, RColorBrewer, scales, gtable, stats, grDevices, graphics",NA,NA,NA,"GPL-2",NA,NA,NA,NA,"no","4.0.3"
+"pillar","pillar","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.7",NA,NA,"cli, crayon (>= 1.3.4), ellipsis, fansi, lifecycle, rlang (>=
+0.3.0), utf8 (>= 1.1.0), vctrs (>= 0.2.0)",NA,"bit64, knitr, lubridate, testthat (>= 2.0.0), withr",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"pkgbuild","pkgbuild","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,"R (>= 3.1)","callr (>= 3.2.0), cli, crayon, desc, prettyunits, R6,
+rprojroot, withr (>= 2.1.2)",NA,"Rcpp, cpp11, testthat, covr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"pkgconfig","pkgconfig","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.3",NA,NA,"utils",NA,"covr, testthat, disposables (>= 1.0.3)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"pkgload","pkgload","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.0",NA,NA,"cli, crayon, desc, methods, pkgbuild, rlang, rprojroot,
+rstudioapi, utils, withr",NA,"bitops, covr, Rcpp, testthat",NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"plogr","plogr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2.0",NA,NA,NA,NA,"Rcpp",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"praise","praise","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.0",NA,NA,NA,NA,"testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"prettyunits","prettyunits","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,NA,NA,NA,"codetools, covr, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"processx","processx","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.4.5",NA,NA,"ps (>= 1.2.0), R6, utils",NA,"callr (>= 3.2.0), codetools, covr, crayon, curl, debugme,
+parallel, testthat, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"progeny","progeny","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.12.0",NA,"R (>= 3.6.0)","Biobase, stats, dplyr, tidyr, ggplot2, ggrepel, gridExtra",NA,"airway, biomaRt, BiocFileCache, broom, Seurat,
+SingleCellExperiment, DESeq2, BiocStyle, knitr, readr, readxl,
+pheatmap, tibble, testthat (>= 2.1.0)",NA,"Apache License (== 2.0) | file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"progress","progress","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.2",NA,NA,"hms, prettyunits, R6, crayon",NA,"Rcpp, testthat, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"promises","promises","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,NA,"R6, Rcpp, later, rlang, stats, magrittr","later, Rcpp","testthat, future, knitr, rmarkdown",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"ps","ps","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.5.0",NA,"R (>= 3.1)","utils",NA,"callr, covr, curl, pingr, processx (>= 3.1.0), R6, rlang,
+testthat, tibble",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"purrr","purrr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.4",NA,"R (>= 3.2)","magrittr (>= 1.5), rlang (>= 0.3.1)",NA,"covr, crayon, dplyr (>= 0.7.8), knitr, rmarkdown, testthat,
+tibble, tidyselect",NA,"GPL-3 | file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"R6","R6","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.5.0",NA,"R (>= 3.0)",NA,NA,"knitr, microbenchmark, pryr, testthat, ggplot2, scales",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"rappdirs","rappdirs","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.2",NA,"R (>= 3.2)",NA,NA,"roxygen2, testthat (>= 3.0.0), covr, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"RBGL","RBGL","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.66.0",NA,"graph, methods","methods","BH","Rgraphviz, XML, RUnit, BiocGenerics",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"rcmdcheck","rcmdcheck","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.3.3",NA,NA,"callr (>= 3.1.1.9000), cli (>= 1.1.0), crayon, desc (>=
+1.2.0), digest, pkgbuild, prettyunits, R6, rprojroot,
+sessioninfo (>= 1.1.1), utils, withr, xopen",NA,"covr, knitr, mockery, rmarkdown, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"RColorBrewer","RColorBrewer","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1-2",NA,"R (>= 2.0.0)",NA,NA,NA,NA,"Apache License 2.0",NA,NA,NA,NA,"no","4.0.3"
+"Rcpp","Rcpp","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.6",NA,NA,"methods, utils",NA,"tinytest, inline, rbenchmark, pkgKitten (>= 0.1.2)",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"RcppArmadillo","RcppArmadillo","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.10.1.2.2",NA,"R (>= 3.3.0)","Rcpp (>= 0.11.0), stats, utils, methods","Rcpp","tinytest, Matrix (>= 1.3.0), pkgKitten, reticulate, slam",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"RCurl","RCurl","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.98-1.2",NA,"R (>= 3.4.0), methods","bitops",NA,"XML",NA,"BSD_3_clause + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"readr","readr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.0",NA,"R (>= 3.1)","cli, clipr, crayon, hms (>= 0.4.1), methods, rlang, R6,
+tibble, utils, lifecycle","BH, cpp11","covr, curl, dplyr, knitr, rmarkdown, spelling, stringi,
+testthat, xml2",NA,"GPL (>= 2) | file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"readxl","readxl","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.3.1",NA,NA,"cellranger, Rcpp (>= 0.12.18), tibble (>= 1.3.1), utils","progress, Rcpp","covr, knitr, rmarkdown, rprojroot (>= 1.1), testthat",NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"rematch","rematch","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.1",NA,NA,NA,NA,"covr, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"rematch2","rematch2","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.1.2",NA,NA,"tibble",NA,"covr, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"remotes","remotes","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.2.0",NA,"R (>= 3.0.0)","methods, stats, tools, utils",NA,"brew, callr, codetools, curl, covr, git2r (>= 0.23.0), knitr,
+mockery, pkgbuild (>= 1.0.1), pingr, rmarkdown, rprojroot,
+testthat, withr",NA,"GPL (>= 2)",NA,NA,NA,NA,"no","4.0.3"
+"repr","repr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.3",NA,"R (>= 3.0.1)","utils, grDevices, htmltools, jsonlite, pillar (>= 1.4.0),
+base64enc",NA,"methods, highr, Cairo, stringr, testthat (>= 3.0.0), leaflet","data.table, tibble, htmlwidgets, vegalite, plotly, geojsonio","GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"reprex","reprex","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.0",NA,"R (>= 3.3)","callr (>= 3.3.1), cli, clipr (>= 0.4.0), fs, glue, knitr (>=
+1.23), rlang (>= 0.4.0), rmarkdown, utils, withr (>= 2.3.0)",NA,"covr, fortunes, miniUI, rprojroot, rstudioapi, sessioninfo,
+shiny, spelling, styler (>= 1.2.0), testthat (>= 3.0.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"rex","rex","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.2.0",NA,NA,"lazyeval",NA,"testthat, knitr, rmarkdown, dplyr, ggplot2, magrittr, Hmisc,
+stringr, rvest, roxygen2, covr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"rlang","rlang","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.4.10",NA,"R (>= 3.3.0)","utils",NA,"cli, covr, crayon, glue, magrittr, methods, pak, pillar,
+rmarkdown, testthat (>= 3.0.0), vctrs (>= 0.2.3), withr","winch","MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"rmarkdown","rmarkdown","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.6",NA,"R (>= 3.0)","tools, utils, knitr (>= 1.22), yaml (>= 2.1.19), htmltools (>=
+0.3.5), evaluate (>= 0.13), jsonlite, tinytex (>= 0.11), xfun
+(>= 0.15), methods, stringr (>= 1.2.0)",NA,"shiny (>= 0.11), tufte, testthat (>= 2.0.0), digest,
+dygraphs, vctrs, tibble, fs, rsconnect, withr (>= 2.3.0)",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"roxygen2","roxygen2","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","7.1.1",NA,"R (>= 3.2)","brew, commonmark, desc (>= 1.2.0), digest, knitr, methods,
+pkgload (>= 1.0.2), purrr (>= 0.3.3), R6 (>= 2.1.2), Rcpp (>=
+0.11.0), rlang, stringi, stringr (>= 1.0.0), utils, xml2","Rcpp","covr, devtools, rmarkdown, testthat (>= 2.1.0), R.methodsS3,
+R.oo",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"rprojroot","rprojroot","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.2",NA,"R (>= 3.0.0)",NA,NA,"covr, knitr, lifecycle, mockr, rmarkdown, testthat (>=
+3.0.0), withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"RSQLite","RSQLite","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.2.3",NA,"R (>= 3.1.0)","bit64, blob (>= 1.2.0), DBI (>= 1.1.0), memoise, methods,
+pkgconfig, Rcpp (>= 0.12.7)","BH (>= 1.75.0-0), plogr (>= 0.2.0), Rcpp","DBItest (>= 1.7.0), gert, gh, knitr, rmarkdown, hms, rvest,
+testthat, xml2",NA,"LGPL (>= 2.1)",NA,NA,NA,NA,"yes","4.0.3"
+"rstudioapi","rstudioapi","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.13",NA,NA,NA,NA,"testthat, knitr, rmarkdown, clipr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"rversions","rversions","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.2",NA,NA,"curl, utils, xml2 (>= 1.0.0)",NA,"mockery, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"rvest","rvest","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.6",NA,"R (>= 3.2), xml2","httr (>= 0.5), magrittr, selectr",NA,"covr, knitr, png, rmarkdown, spelling, stringi (>= 0.3.1),
+testthat",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"S4Vectors","S4Vectors","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.28.1",NA,"R (>= 4.0.0), methods, utils, stats, stats4, BiocGenerics (>=
+0.36.0)",NA,NA,"IRanges, GenomicRanges, SummarizedExperiment, Matrix,
+DelayedArray, ShortRead, graph, data.table, RUnit, BiocStyle",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"scales","scales","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,"R (>= 3.2)","farver (>= 2.0.3), labeling, lifecycle, munsell (>= 0.5), R6,
+RColorBrewer, viridisLite",NA,"bit64, covr, dichromat, ggplot2, hms (>= 0.5.0), testthat (>=
+2.1.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"segmented","segmented","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.3-1",NA,NA,NA,NA,NA,NA,"GPL",NA,NA,NA,NA,"no","4.0.3"
+"selectr","selectr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.4-2",NA,"R (>= 3.0)","methods, stringr, R6",NA,"testthat, XML, xml2",NA,"BSD_3_clause + file LICENCE",NA,NA,NA,NA,"no","4.0.3"
+"sessioninfo","sessioninfo","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.1",NA,NA,"cli, tools, utils, withr",NA,"callr, covr, mockery, testthat",NA,"GPL-2",NA,NA,NA,NA,"no","4.0.3"
+"snow","snow","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.4-3",NA,"R (>= 2.13.1), utils",NA,NA,"Rmpi,rlecuyer,nws",NA,"GPL",NA,NA,NA,NA,"no","4.0.3"
+"splines","splines","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"graphics, stats",NA,"Matrix, methods",NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"stats","stats","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"utils, grDevices, graphics",NA,"MASS, Matrix, SuppDists, methods, stats4",NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"stats4","stats4","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"graphics, methods, stats",NA,NA,NA,"Part of R 4.0.3",NA,NA,NA,NA,NA,"4.0.3"
+"stringi","stringi","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.5.3",NA,"R (>= 2.14)","tools, utils, stats",NA,NA,NA,"file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"stringr","stringr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.4.0",NA,"R (>= 3.1)","glue (>= 1.2.0), magrittr, stringi (>= 1.1.7)",NA,"covr, htmltools, htmlwidgets, knitr, rmarkdown, testthat",NA,"GPL-2 | file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"SummarizedExperiment","SummarizedExperiment","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.20.0",NA,"R (>= 3.2), methods, MatrixGenerics (>= 1.1.3), GenomicRanges
+(>= 1.41.5), Biobase","utils, stats, tools, Matrix, BiocGenerics (>= 0.15.3),
+S4Vectors (>= 0.27.12), IRanges (>= 2.23.9), GenomeInfoDb (>=
+1.13.1), DelayedArray (>= 0.15.10)",NA,"HDF5Array (>= 1.7.5), annotate, AnnotationDbi, hgu95av2.db,
+GenomicFeatures, TxDb.Hsapiens.UCSC.hg19.knownGene, jsonlite,
+rhdf5, airway, BiocStyle, knitr, rmarkdown, RUnit, testthat,
+digest",NA,"Artistic-2.0",NA,NA,NA,NA,"no","4.0.3"
+"survival","survival","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.2-7","recommended","R (>= 3.4.0)","graphics, Matrix, methods, splines, stats, utils",NA,NA,NA,"LGPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"sys","sys","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.4",NA,NA,NA,NA,"unix (>= 1.4), spelling, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"tcltk","tcltk","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,"utils",NA,NA,NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"testthat","testthat","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.0.1",NA,"R (>= 3.1)","brio, callr (>= 3.5.1), cli (>= 2.2.0), crayon (>= 1.3.4),
+desc, digest, ellipsis (>= 0.2.0), evaluate, jsonlite,
+lifecycle, magrittr, methods, pkgload, praise, processx, ps (>=
+1.3.4), R6 (>= 2.2.0), rlang (>= 0.4.9), utils, waldo (>=
+0.2.1), withr (>= 2.3.0)",NA,"covr, curl (>= 0.9.5), diffviewer (>= 0.1.0), knitr, mockery,
+rmarkdown, rstudioapi, shiny, usethis, vctrs (>= 0.1.0), xml2",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"tibble","tibble","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.0.6",NA,"R (>= 3.1.0)","cli, crayon (>= 1.3.4), ellipsis (>= 0.2.0), fansi (>= 0.4.0),
+lifecycle (>= 0.2.0), magrittr, methods, pillar (>= 1.4.3),
+pkgconfig, rlang (>= 0.4.3), utils, vctrs (>= 0.3.2)",NA,"bench, bit64, blob, covr, DiagrammeR, dplyr, evaluate,
+formattable, ggplot2, hms, htmltools, import, knitr, lubridate,
+mockr, nycflights13, purrr, rmarkdown, testthat (>= 3.0.1),
+tidyr, withr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"tidyr","tidyr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.2",NA,"R (>= 3.1)","dplyr (>= 0.8.2), ellipsis (>= 0.1.0), glue, magrittr, purrr,
+rlang, tibble (>= 2.1.1), tidyselect (>= 1.1.0), utils, vctrs
+(>= 0.3.0), lifecycle","cpp11 (>= 0.2.1)","covr, jsonlite, knitr, repurrrsive (>= 1.0.0), rmarkdown,
+readr, testthat (>= 2.1.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"tidyselect","tidyselect","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.0",NA,"R (>= 3.2)","ellipsis, glue (>= 1.3.0), purrr (>= 0.3.2), rlang (>= 0.4.6),
+vctrs (>= 0.2.2)",NA,"covr, crayon, dplyr, knitr, magrittr, rmarkdown, testthat (>=
+2.3.0), tibble (>= 2.1.3), withr",NA,"GPL-3",NA,NA,NA,NA,"yes","4.0.3"
+"tidyverse","tidyverse","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.3.0",NA,"R (>= 3.2)","broom (>= 0.5.2), cli (>= 1.1.0), crayon (>= 1.3.4), dbplyr
+(>= 1.4.2), dplyr (>= 0.8.3), forcats (>= 0.4.0), ggplot2 (>=
+3.2.1), haven (>= 2.2.0), hms (>= 0.5.2), httr (>= 1.4.1),
+jsonlite (>= 1.6), lubridate (>= 1.7.4), magrittr (>= 1.5),
+modelr (>= 0.1.5), pillar (>= 1.4.2), purrr (>= 0.3.3), readr
+(>= 1.3.1), readxl (>= 1.3.1), reprex (>= 0.3.0), rlang (>=
+0.4.1), rstudioapi (>= 0.10), rvest (>= 0.3.5), stringr (>=
+1.4.0), tibble (>= 2.1.3), tidyr (>= 1.0.0), xml2 (>= 1.2.2)",NA,"covr, feather, glue, knitr, rmarkdown, testthat",NA,"GPL-3 | file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"tinytex","tinytex","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.29",NA,NA,"xfun (>= 0.19)",NA,"testit, rstudioapi",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"tools","tools","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,NA,NA,"codetools, methods, xml2, curl, commonmark",NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"UniProt.ws","UniProt.ws","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.30.0",NA,"methods, utils, RSQLite, RCurl, BiocGenerics (>= 0.13.8)","AnnotationDbi, BiocFileCache, rappdirs",NA,"RUnit, BiocStyle, knitr",NA,"Artistic License 2.0",NA,NA,NA,NA,"no","4.0.3"
+"usethis","usethis","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.0.0",NA,"R (>= 3.2)","cli, clipr (>= 0.3.0), crayon, curl (>= 2.7), desc, fs (>=
+1.3.0), gert (>= 1.0.2), gh (>= 1.2.0), glue (>= 1.3.0),
+jsonlite, lifecycle, purrr, rappdirs, rlang (>= 0.4.3),
+rprojroot (>= 1.2), rstudioapi, stats, utils, whisker, withr
+(>= 2.3.0), yaml",NA,"covr, knitr, magick, mockr, rmarkdown, roxygen2, spelling (>=
+1.2), styler (>= 1.2.0), testthat (>= 3.0.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"utf8","utf8","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.1.4",NA,"R (>= 2.10)",NA,NA,"knitr, rmarkdown, testthat",NA,"Apache License (== 2.0) | file LICENSE",NA,NA,NA,NA,"yes","4.0.0"
+"utils","utils","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","4.0.3","base",NA,NA,NA,"methods, xml2, commonmark",NA,"Part of R 4.0.3",NA,NA,NA,NA,"yes","4.0.3"
+"uuid","uuid","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.1-4",NA,"R (>= 2.9.0)",NA,NA,NA,NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.0"
+"vctrs","vctrs","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.6",NA,"R (>= 3.3)","ellipsis (>= 0.2.0), digest, glue, rlang (>= 0.4.7)",NA,"bit64, covr, crayon, dplyr (>= 0.8.5), generics, knitr,
+pillar (>= 1.4.4), pkgdown, rmarkdown, testthat (>= 2.3.0),
+tibble, withr, xml2, waldo (>= 0.2.0), zeallot",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"VennDiagram","VennDiagram","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.6.20",NA,"R (>= 2.14.1), grid (>= 2.14.1), futile.logger",NA,NA,"testthat",NA,"GPL-2",NA,NA,NA,NA,"no","4.0.3"
+"viper","viper","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.24.0",NA,"R (>= 2.14.0), Biobase, methods","mixtools, stats, parallel, e1071, KernSmooth",NA,"bcellViper",NA,"file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"viridisLite","viridisLite","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.3.0",NA,"R (>= 2.10)",NA,NA,"hexbin (>= 1.27.0), ggplot2 (>= 1.0.1), testthat, covr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"waldo","waldo","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.2.3",NA,NA,"cli, diffobj, fansi, glue, methods, rematch2, rlang, tibble",NA,"testthat, covr, R6",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"whisker","whisker","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.4",NA,NA,NA,NA,"markdown",NA,"GPL-3",NA,NA,NA,NA,"no","4.0.3"
+"withr","withr","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.4.1",NA,"R (>= 3.2.0)","graphics, grDevices, stats",NA,"covr, DBI, knitr, lattice, methods, rmarkdown, RSQLite,
+testthat (>= 2.1.0)",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"xfun","xfun","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.20",NA,NA,"stats, tools",NA,"testit, parallel, codetools, rstudioapi, tinytex, mime,
+markdown, knitr, htmltools, remotes, pak, rmarkdown",NA,"MIT + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"XML","XML","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","3.99-0.5",NA,"R (>= 4.0.0), methods, utils",NA,NA,"bitops, RCurl",NA,"BSD_3_clause + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"xml2","xml2","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.3.2",NA,"R (>= 3.1.0)","methods",NA,"covr, curl, httr, knitr, magrittr, mockery, rmarkdown,
+testthat (>= 2.1.0)",NA,"GPL (>= 2)",NA,NA,NA,NA,"yes","4.0.3"
+"xopen","xopen","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.0.0",NA,"R (>= 3.1)","processx",NA,"ps, testthat",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.3"
+"xtable","xtable","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.8-4",NA,"R (>= 2.10.0)","stats, utils",NA,"knitr, plm, zoo, survival",NA,"GPL (>= 2)",NA,NA,NA,NA,"no","4.0.3"
+"XVector","XVector","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.30.0",NA,"R (>= 2.8.0), methods, BiocGenerics (>= 0.19.2), S4Vectors (>=
+0.27.12), IRanges (>= 2.23.9)","methods, utils, tools, zlibbioc, BiocGenerics, S4Vectors,
+IRanges","S4Vectors, IRanges","Biostrings, drosophila2probe, RUnit",NA,"Artistic-2.0",NA,NA,NA,NA,"yes","4.0.3"
+"yaml","yaml","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.2.1",NA,NA,NA,NA,"RUnit",NA,"BSD_3_clause + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
+"zeallot","zeallot","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","0.1.0",NA,NA,NA,NA,"testthat, knitr, rmarkdown, purrr, magrittr",NA,"MIT + file LICENSE",NA,NA,NA,NA,"no","4.0.0"
+"zip","zip","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","2.1.1",NA,NA,NA,NA,"covr, processx, R6, testthat, withr",NA,"CC0",NA,NA,NA,NA,"yes","4.0.3"
+"zlibbioc","zlibbioc","/home/bartosz/.miniconda3/envs/bioquant/lib/R/library","1.36.0",NA,NA,NA,NA,NA,NA,"Artistic-2.0 + file LICENSE",NA,NA,NA,NA,"yes","4.0.3"
