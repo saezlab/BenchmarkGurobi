@@ -16,7 +16,7 @@ rule save_packages:
     output:
         "r_packages.csv"
     shell:
-        "R --slave -e \"write.csv(installed.packages(), 'r_packages.csv')\""
+        "R --slave -e \"write.csv(installed.packages()[, c('Package', 'Version')], 'r_packages.csv')\""
 
 rule use_dot:
     input:
