@@ -18,10 +18,11 @@ dependencies:
   - bwidget=1.9.14=ha770c72_0
   - bzip2=1.0.8=h7f98852_4
   - c-ares=1.17.1=h36c2ea0_0
-  - ca-certificates=2021.1.19=h06a4308_0
+  - ca-certificates=2020.12.5=ha878542_0
   - cairo=1.16.0=h7979940_1007
-  - certifi=2020.12.5=py38h06a4308_0
+  - certifi=2020.12.5=py38h578d9bd_1
   - cffi=1.14.4=py38ha65f79e_1
+  - coincbc=2.10.5=hcee13e7_1
   - curl=7.71.1=he644dc0_8
   - dbus=1.13.6=hfdff14a_1
   - decorator=4.4.2=py_0
@@ -115,7 +116,7 @@ dependencies:
   - nspr=4.29=h9c3ff4c_1
   - nss=3.61=hb5efdd6_0
   - numpy=1.20.0=py38h18fd61f_0
-  - openssl=1.1.1i=h27cfd23_0
+  - openssl=1.1.1i=h7f98852_0
   - packaging=20.8=pyhd3deb0d_0
   - pandas=1.2.1=py38ha9443f7_0
   - pandoc=2.11.4=h7f98852_0
