@@ -4,7 +4,8 @@ library(CARNIVAL)
 
 input_data <- readRDS(snakemake@input[[1]])
 
-res = runCARNIVAL(solverPath = snakemake@config[[snakemake@wildcards[["solver"]]]], 
+res = runCARNIVAL(solver  = snakemake@wildcards[["solver"]],
+                  solverPath = snakemake@config[[snakemake@wildcards[["solver"]]]], 
                   inputObj = input_data$inputObj, 
                   measObj = input_data$measObj, 
                   netObj = input_data$netObj)
