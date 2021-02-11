@@ -6,3 +6,6 @@ Benchmarks/
 # Snakemake
 .snakemake
 solvers.json
+
+# Singularity
+*.sif
