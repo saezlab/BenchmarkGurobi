@@ -1,6 +1,7 @@
 
 # Data
 Output/
+OutputSif/
 Benchmarks/
 
 # Snakemake
