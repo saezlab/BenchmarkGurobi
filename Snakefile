@@ -38,6 +38,8 @@ rule use_carnival:
         "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/carnival_input.Rds"
     output:
         "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/{solver}/result.Rds"
+    shadow: 
+        "shallow"
     benchmark:
         repeat("Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/{solver}/benchmark.tsv", 5)
     script:
