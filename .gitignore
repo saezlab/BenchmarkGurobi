@@ -3,6 +3,9 @@
 Output*/
 Benchmarks/
 
+# Python
+.ipynb_checkpoints/
+
 # Snakemake
 .snakemake
 solvers.json

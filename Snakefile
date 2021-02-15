@@ -10,7 +10,7 @@ rule save_env:
     output:
         "conda_env.yml"
     shell:
-        "conda env export -n bioquant --file {output}"
+        "conda env export -n bioquant_devel --file {output}"
 
 rule save_packages:
     output:
