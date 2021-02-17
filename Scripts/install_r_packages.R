@@ -8,7 +8,8 @@ repo <- "http://cran.us.r-project.org"
 # pip install snakemake jupytext betterbib
 # ```
 
-install.packages(c("devtools", "tidyverse", "VennDiagram", "openxlsx", "BiocManager"), 
+install.packages(c("devtools", "tidyverse", "VennDiagram", 
+                   "openxlsx", "BiocManager", "reshape2"), 
                  repos = repo)
 BiocManager::install('OmnipathR', version = '3.12')
 devtools::install_github('saezlab/CARNIVAL')

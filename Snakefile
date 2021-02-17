@@ -29,6 +29,7 @@ rule use_dot:
 rule generate_input:
     output:
         "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/carnival_input.Rds",
+        "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/interactions.csv",
         "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/graph.Rds",
     script:
         "Scripts/generate_input.R"
@@ -48,5 +49,5 @@ rule use_carnival:
 rule test:
     input:
         expand("Output/N8_I3_M2_S1_P0.2/{solver}/result.Rds", 
-                solver=["lpsolve", "cbc", "cplex"])
+                solver=["lpSolve", "cbc", "cplex"])
 

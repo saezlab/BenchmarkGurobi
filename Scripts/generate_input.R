@@ -21,7 +21,7 @@ while (igraph::count_components(g) > 1) {
     g <- igraph::erdos.renyi.game(num_nodes, edge_prob, "gnp", directed = TRUE)
 }
 g <- igraph::set.vertex.attribute(g, "name", value=labels)
-saveRDS(g, snakemake@output[[2]])
+saveRDS(g, snakemake@output[[3]])
 
 # We convert the graph to a dataframe
 df <- igraph::as_data_frame(g, what="edges")
@@ -37,4 +37,5 @@ colnames(meas) <- labels_meas
 
 carnival_input <- list(inputObj = inputs, measObj = meas, netObj = df)
 saveRDS(carnival_input, snakemake@output[[1]])
+write.csv(df, snakemake@output[[2]], quote = FALSE, row.names = FALSE)
 
