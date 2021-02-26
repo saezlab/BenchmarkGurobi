@@ -28,26 +28,26 @@ rule use_dot:
 
 rule generate_input:
     output:
-        "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/carnival_input.Rds",
-        "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/interactions.csv",
-        "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/graph.Rds",
+        "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/carnival_input.Rds",
+        "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/interactions.csv",
+        "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/graph.Rds",
     script:
         "Scripts/generate_input.R"
 
 rule use_carnival:
     input:
-        "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/carnival_input.Rds"
+        "Output/{dataset}/carnival_input.Rds"
     output:
-        "Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/{solver}/result.Rds"
+        "Output/{dataset}/{solver}/result.Rds"
     shadow: 
         "shallow"
     benchmark:
-        repeat("Output/N{nodes}_I{inputs}_M{meas}_S{seed}_P{prob}/{solver}/benchmark.tsv", 5)
+        repeat("Output/{dataset}/{solver}/benchmark.tsv", 5)
     script:
         "Scripts/use_carnival.R"
 
 rule test:
     input:
-        expand("Output/N8_I3_M2_S1_P0.2/{solver}/result.Rds", 
+        expand("Output/Erdos/E10_N8_I3_M2_S1_P2_2/{solver}/result.Rds", 
                 solver=["lpSolve", "cbc", "cplex"])
 

@@ -3,6 +3,7 @@
 Output*/
 Benchmarks/
 Figures/
+*.tar.gz
 
 # Python
 .ipynb_checkpoints/
@@ -13,4 +14,7 @@ solvers.json
 
 # Singularity
 *.sif
+
+# Misc
+notes.md
 

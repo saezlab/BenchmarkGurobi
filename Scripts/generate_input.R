@@ -4,10 +4,12 @@ library(igraph)
 
 # Input parameters
 set.seed(snakemake@wildcards[["seed"]]) 
-edge_prob = as.numeric(snakemake@wildcards[["prob"]])
+num_edges = as.numeric(snakemake@wildcards[["edges"]])
 num_nodes = as.numeric(snakemake@wildcards[["nodes"]])
 num_inputs = as.numeric(snakemake@wildcards[["inputs"]])
 num_measurments = as.numeric(snakemake@wildcards[["meas"]])
+exp_out = as.numeric(snakemake@wildcards[["exp_out"]])
+exp_in = as.numeric(snakemake@wildcards[["exp_in"]])
 
 # We create appropriate labels
 labels_inputs = paste0("I", 1:num_inputs)
@@ -16,9 +18,16 @@ lebels_rest = paste0("N", 1:(num_nodes - num_inputs - num_measurments))
 labels = c(labels_inputs, labels_meas, lebels_rest)
 
 # We create the network using igraph library
-g <- igraph::erdos.renyi.game(num_nodes, edge_prob, "gnp", directed = TRUE)
-while (igraph::count_components(g) > 1) {
-    g <- igraph::erdos.renyi.game(num_nodes, edge_prob, "gnp", directed = TRUE)
+if (snakemake@wildcards[["network"]] == "Erdos") {
+    g <- igraph::erdos.renyi.game(num_nodes, num_edges, "gnm", directed = TRUE)
+    while (igraph::count_components(g) > 1) {
+        g <- igraph::erdos.renyi.game(num_nodes, num_edges, "gnm", directed = TRUE)
+    }
+} else if (snakemake@wildcards[["network"]] == "Powerlaw") {
+    g <- igraph::static.power.law.game(num_nodes, num_edges, exp_out, exp_in)
+    while (igraph::count_components(g) > 1) {
+        g <- igraph::static.power.law.game(num_nodes, num_edges, exp_out, exp_in)
+    }
 }
 g <- igraph::set.vertex.attribute(g, "name", value=labels)
 saveRDS(g, snakemake@output[[3]])
