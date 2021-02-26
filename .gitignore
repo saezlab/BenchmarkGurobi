@@ -2,6 +2,7 @@
 # Data
 Output*/
 Benchmarks/
+Figures/
 
 # Python
 .ipynb_checkpoints/
@@ -12,3 +13,4 @@ solvers.json
 
 # Singularity
 *.sif
+
