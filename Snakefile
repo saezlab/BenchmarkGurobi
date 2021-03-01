@@ -8,8 +8,8 @@ rule all:
 
 rule test:
     input:
-        expand("Output/Erdos/E10_N8_I3_M2_S1_P2_2/{solver}/result.Rds", 
-                solver=["lpSolve", "cbc", "cplex"])
+        expand("Output/{network}/E10_N8_I3_M2_S1_P2_2/{solver}/result.Rds", 
+                solver=["lpSolve", "cbc", "cplex"], network=["Powerlaw", "Erdos"])
 
 rule save_env:
     output:
@@ -31,13 +31,24 @@ rule use_dot:
     shell:
         "dot {input} -T {wildcards.filetype} > {output}"
 
-rule generate_input:
+rule igraph_input:
     output:
         "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/carnival_input.Rds",
         "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/interactions.csv",
         "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/graph.Rds",
     script:
-        "Scripts/generate_input.R"
+        "Scripts/generate_igraph_input.R"
+
+rule omnipath_input:
+    input:
+        "measurments.csv"
+    output:
+        "Output/Omnipath/measurments.csv",
+        "Output/Omnipath/pkn.csv",
+        "Output/Omnipath/input.csv",
+        "Output/Omnipath/carnival_input.Rds"
+    script:
+        "Scripts/generate_omnipath_input.R"
 
 rule use_carnival:
     input:

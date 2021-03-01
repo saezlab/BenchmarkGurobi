@@ -7,6 +7,7 @@ Figures/
 
 # Python
 .ipynb_checkpoints/
+tests.*.ipynb
 
 # Snakemake
 .snakemake
