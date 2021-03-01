@@ -6,6 +6,11 @@ rule all:
         "conda_env.yml", 
         "r_packages.csv"
 
+rule test:
+    input:
+        expand("Output/Erdos/E10_N8_I3_M2_S1_P2_2/{solver}/result.Rds", 
+                solver=["lpSolve", "cbc", "cplex"])
+
 rule save_env:
     output:
         "conda_env.yml"
@@ -45,9 +50,4 @@ rule use_carnival:
         repeat("Output/{dataset}/{solver}/benchmark.tsv", 5)
     script:
         "Scripts/use_carnival.R"
-
-rule test:
-    input:
-        expand("Output/Erdos/E10_N8_I3_M2_S1_P2_2/{solver}/result.Rds", 
-                solver=["lpSolve", "cbc", "cplex"])
 
