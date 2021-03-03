@@ -1,8 +1,9 @@
 name: bioquant_devel
 channels:
-  - defaults
+  - r
   - bioconda
   - conda-forge
+  - defaults
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=1_gnu
@@ -224,6 +225,7 @@ dependencies:
   - zstd=1.4.8=ha95c52a_1
   - pip:
     - amply==0.1.4
+    - appdirs==1.4.4
     - chardet==4.0.0
     - colorama==0.4.4
     - configargparse==1.2.3
