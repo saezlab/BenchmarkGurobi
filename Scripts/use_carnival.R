@@ -1,13 +1,20 @@
 
 library(CARNIVAL)
 
+args <- commandArgs(trailingOnly=TRUE)
+input_path <- args[1]
+output_path <- args[2]
+solver <- args[3]
+solver_path <- args[4]
 
-input_data <- readRDS(snakemake@input[[1]])
 
-res = runCARNIVAL(solver  = snakemake@wildcards[["solver"]],
-                  solverPath = snakemake@config[[snakemake@wildcards[["solver"]]]], 
-                  inputObj = input_data$inputObj, 
-                  measObj = input_data$measObj, 
-                  netObj = input_data$netObj)
+input_data <- readRDS(input_path)
 
-saveRDS(res, snakemake@output[[1]])
+res <- runCARNIVAL(solver = solver, 
+                   solverPath = solver_path, 
+                   inputObj = input_data$inputObj, 
+                   measObj = input_data$measObj, 
+                   netObj = input_data$netObj, 
+                   dir_name=dirname(output_path))
+
+saveRDS(res, output_path)

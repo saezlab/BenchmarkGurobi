@@ -30,7 +30,9 @@ if (snakemake@wildcards[["network"]] == "Erdos") {
     }
 }
 g <- igraph::set.vertex.attribute(g, "name", value=labels)
+g <- igraph::set.vertex.attribute(g, "label", value=labels)
 saveRDS(g, snakemake@output[[3]])
+write_graph(g, snakemake@output[[4]], "dot")
 
 # We convert the graph to a dataframe
 df <- igraph::as_data_frame(g, what="edges")

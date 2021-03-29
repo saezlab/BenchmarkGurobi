@@ -4,6 +4,7 @@ Output*/
 Benchmarks/
 Figures/
 *.tar.gz
+gurobi.log
 
 # Python
 .ipynb_checkpoints/
