@@ -1,4 +1,9 @@
 
+import socket
+
+if "bioquant" in socket.gethostname():
+    shell.prefix("module load numlib/gurobi;")
+
 configfile: "solvers.json"
 
 rule test:
