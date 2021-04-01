@@ -181,7 +181,9 @@ dependencies:
   - pthread-stubs=0.4=h36c2ea0_1001
   - ptyprocess=0.7.0=pyhd3deb0d_0
   - pycparser=2.20=pyh9f0ad1d_2
+  - pydot=1.4.2=py38h578d9bd_0
   - pygments=2.8.0=pyhd8ed1ab_0
+  - pygraphviz=1.7=py38h0d738da_0
   - pyparsing=2.4.7=pyh9f0ad1d_0
   - pyqt=5.12.3=py38h578d9bd_7
   - pyqt-impl=5.12.3=py38h7400c14_7
