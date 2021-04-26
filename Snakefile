@@ -28,9 +28,9 @@ rule save_env:
 
 rule use_dot:
     input:
-        "{filepath}.dot"
+        "Output/{filepath}.dot"
     output:
-        "{filepath}.{filetype}"
+        "Output/{filepath}.{filetype}"
     shell:
         "dot {input} -T {wildcards.filetype} > {output}"
 
