@@ -8,7 +8,6 @@ gurobi.log
 
 # Python
 .ipynb_checkpoints/
-tests.*.ipynb
 
 # Snakemake
 .snakemake
