@@ -17,5 +17,6 @@ solvers.json
 *.sif
 
 # Misc
+.carnival
 notes.md
 

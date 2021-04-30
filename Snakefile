@@ -20,20 +20,6 @@ rule test:
                 solver=["lpSolve", "cbc", "cplex", "gurobi"], 
                 network=["Powerlaw", "Erdos"])
 
-rule save_env:
-    output:
-        "conda_env.yml"
-    shell:
-        "conda env export -n bioquant_devel --file {output}"
-
-rule use_dot:
-    input:
-        "Output/{filepath}.dot"
-    output:
-        "Output/{filepath}.{filetype}"
-    shell:
-        "dot {input} -T {wildcards.filetype} > {output}"
-
 rule igraph_input:
     output:
         "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/carnival_input.Rds",
@@ -53,6 +39,12 @@ rule omnipath_input:
         "Output/Omnipath/carnival_input.Rds"
     script:
         "Scripts/generate_omnipath_input.R"
+
+rule install_carnival:
+    output:
+        ".carnival"
+    shell:
+        "./Scripts/install_carnival.R {output}"
 
 rule use_carnival:
     input:
@@ -81,3 +73,16 @@ rule export_notebook:
     shell:
         "jupyter-nbconvert --to {params.fmt} --execute {input}"
 
+rule save_env:
+    output:
+        "conda_env.yml"
+    shell:
+        "conda env export -n bioquant_devel --file {output}"
+
+rule use_dot:
+    input:
+        "Output/{filepath}.dot"
+    output:
+        "Output/{filepath}.{filetype}"
+    shell:
+        "dot {input} -T {wildcards.filetype} > {output}"
