@@ -133,7 +133,7 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 
 cplex | gurobi
 - | -
-![cplex](Images/example_cplex.svg) | ![gurobi](Images/example_gurobi.svg)
+<img src="Images/example_cplex.svg" alt="cplex" width="200"/> | <img src="Images/example_gurobi.svg" alt="gurobi" width="200"/>
 
 # Results
 
