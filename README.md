@@ -28,13 +28,16 @@ snakemake -j10 --cluster "sbatch -c1 --mem 5G -t 2:00:00"
 
 
 ```python
-%matplotlib notebook
-# %matplotlib inline
+# %matplotlib notebook
+%matplotlib inline
 %load_ext rpy2.ipython
+from IPython.display import Image
+import graphviz
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 import pandas as pd
+import pydotplus
 from pyvis.network import Network
 import rpy2.robjects as robjects
 from rpy2.robjects import pandas2ri
@@ -97,15 +100,8 @@ nx.draw(g, pos, ax, with_labels=True)
 ```
 
 
-    <IPython.core.display.Javascript object>
+![png](main.py_files/main.py_3_0.png)
 
-
-
-<div id='0fc73510-8be8-4fa9-838f-6ea7e708557c'></div>
-
-
-PKN:
-<img src="Output/Erdos/E300_N100_I10_M10_S1_P2_2/graph.svg" alt="cplex_solution" width="1000"/>
 
 
 ```python
@@ -125,23 +121,19 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 ```
 
 
-    <IPython.core.display.Javascript object>
-
-
-
-<div id='4cf1eabb-fb01-4028-a500-32eaa72d5359'></div>
-
-
-
 
 
     <BarContainer object of 3 artists>
 
 
 
+
+![png](main.py_files/main.py_4_1.png)
+
+
 cplex | gurobi
 - | -
-![cplex](Output/Erdos/E300_N100_I10_M10_S1_P2_2/cplex/network_solution.svg) | ![gurobi](Output/Erdos/E300_N100_I10_M10_S1_P2_2/gurobi/network_solution.svg)
+![cplex](Images/example_cplex.svg) | ![gurobi](Images/example_gurobi.svg)
 
 # Results
 
@@ -182,18 +174,14 @@ fig.suptitle("Erdos networks")
 ```
 
 
-    <IPython.core.display.Javascript object>
-
-
-
-<div id='f0e109b8-683b-42d5-a4fb-35c91498a9bf'></div>
-
-
-
 
 
     Text(0.5, 0.98, 'Erdos networks')
 
+
+
+
+![png](main.py_files/main.py_9_1.png)
 
 
 ## Powerlaw networks
@@ -219,16 +207,12 @@ fig.suptitle("Powerlaw networks")
 ```
 
 
-    <IPython.core.display.Javascript object>
-
-
-
-<div id='f62f2958-d8dd-4cb2-aa52-c3405a846b7d'></div>
-
-
-
 
 
     Text(0.5, 0.98, 'Powerlaw networks')
 
+
+
+
+![png](main.py_files/main.py_11_1.png)
 

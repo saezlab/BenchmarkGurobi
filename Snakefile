@@ -63,22 +63,6 @@ rule use_carnival:
     shell:
         "Rscript Scripts/use_carnival.R {input} {output[0]} {wildcards.solver} {params.solver_path} > {log} 2>&1"
 
-rule export_notebook:
-    input:
-        "main.py.ipynb"
-    output:
-        "main.py.{fmt}"
-    params:
-        fmt = lambda wildcards : "markdown" if wildcards.fmt == "md" else wildcards.fmt
-    shell:
-        "jupyter-nbconvert --to {params.fmt} --execute {input}"
-
-rule save_env:
-    output:
-        "conda_env.yml"
-    shell:
-        "conda env export -n bioquant_devel --file {output}"
-
 rule use_dot:
     input:
         "Output/{filepath}.dot"
@@ -86,3 +70,37 @@ rule use_dot:
         "Output/{filepath}.{filetype}"
     shell:
         "dot {input} -T {wildcards.filetype} > {output}"
+
+rule example_cplex:
+    input:
+        "Output/Erdos/E300_N100_I10_M10_S1_P2_2/cplex/network_solution.svg"
+    output:
+        "Images/example_cplex.svg"
+    shell:
+        "cp {input} {output}"
+
+rule example_gurobi:
+    input:
+        "Output/Erdos/E300_N100_I10_M10_S1_P2_2/gurobi/network_solution.svg"
+    output:
+        "Images/example_gurobi.svg"
+    shell:
+        "cp {input} {output}"
+
+rule export_notebook:
+    input:
+        "main.py.ipynb",
+        expand("Images/example_{solver}.svg", solver=("cplex", "gurobi"))
+    output:
+        "main.py.{fmt}"
+    params:
+        fmt = lambda wildcards : "markdown" if wildcards.fmt == "md" else wildcards.fmt
+    shell:
+        "jupyter-nbconvert --to {params.fmt} --execute {input[0]}"
+
+rule save_env:
+    output:
+        "conda_env.yml"
+    shell:
+        "conda env export -n bioquant_devel --file {output}"
+    

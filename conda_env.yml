@@ -185,6 +185,7 @@ dependencies:
   - ptyprocess=0.7.0=pyhd3deb0d_0
   - pycparser=2.20=pyh9f0ad1d_2
   - pydot=1.4.2=py38h578d9bd_0
+  - pydotplus=2.0.2=pyhd1c1de3_3
   - pygments=2.8.0=pyhd8ed1ab_0
   - pygraphviz=1.7=py38h0d738da_0
   - pyparsing=2.4.7=pyh9f0ad1d_0
@@ -196,6 +197,7 @@ dependencies:
   - pyrsistent=0.17.3=py38h497a2fe_2
   - python=3.8.8=hffdb5ce_0_cpython
   - python-dateutil=2.8.1=py_0
+  - python-graphviz=0.16=pyh243d235_2
   - python_abi=3.8=1_cp38
   - pytz=2021.1=pyhd8ed1ab_0
   - pyvis=0.1.9=pyhd8ed1ab_0
