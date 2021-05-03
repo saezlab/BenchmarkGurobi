@@ -117,10 +117,11 @@ rule export_notebook:
     output:
         "main.py.{fmt}"
     params:
-        fmt = lambda wildcards : "markdown" if wildcards.fmt == "md" else wildcards.fmt
+        fmt = lambda wildcards : "markdown" if wildcards.fmt == "md" else wildcards.fmt,
+        images = "--NbConvertApp.output_files_dir Images"
     shell:
         "sed -i \"s/matplotlib notebook/matplotlib inline/\" {input[0]} && "
-        "jupyter-nbconvert --to {params.fmt} --execute {input[0]}"
+        "jupyter-nbconvert --to {params.fmt} {params.images} --execute {input[0]}"
 
 rule save_env:
     output:

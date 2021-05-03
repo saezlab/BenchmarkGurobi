@@ -34,7 +34,7 @@ conda env create -p ./conda_env --file conda_env.yml
 
 To generate this notebook run snakemake:
 ```
-snakemake --profile Slurm --latency-wait 60"
+snakemake --profile Slurm --latency-wait 60
 ```
 
 
@@ -108,7 +108,7 @@ nx.draw(g, pos, ax, with_labels=True)
 ```
 
 
-![png](main.py_files/main.py_3_0.png)
+![png](Images/main.py_3_0.png)
 
 
 
@@ -136,7 +136,7 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 
 
 
-![png](main.py_files/main.py_4_1.png)
+![png](Images/main.py_4_1.png)
 
 
 
@@ -197,7 +197,7 @@ fig.suptitle("Erdos networks")
 
 
 
-![png](main.py_files/main.py_9_1.png)
+![png](Images/main.py_9_1.png)
 
 
 ## Powerlaw networks
@@ -230,7 +230,7 @@ fig.suptitle("Powerlaw networks")
 
 
 
-![png](main.py_files/main.py_11_1.png)
+![png](Images/main.py_11_1.png)
 
 
 # Discussion
