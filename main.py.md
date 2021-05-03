@@ -2,6 +2,17 @@
 
 This repository is for testing and benchmarking the gurobi implementation within CARNIVAL.
 
+We have implemented the gurobi ILP solver into CARNIVAL. To compare the performance of gurobi solver, we have ran benchmarks on synthetic prior knowledge networks (PKNs) generated using the `igraph` package. We generated two types of PKNs: Erdos-Renyi and powerlaw. Once the PKNs have been generated, we run CARNIVAL with the following parameters using cplex and gurobi ILP solvers:
+
+* mipGAP = 0.05,
+* poolrelGAP = 1e-04,
+* limitPop = 500,
+* poolCap = 100,
+* poolIntensity = 4,
+* poolReplace = 2,
+* alphaWeight = 1,
+* betaWeight = 0.2.
+
 # Setup
 
 In this section, we go though the setup necessary to run this notebook. 
@@ -28,7 +39,6 @@ snakemake --profile Slurm --latency-wait 60"
 
 
 ```python
-# %matplotlib notebook
 %matplotlib inline
 %load_ext rpy2.ipython
 from IPython.display import HTML, display
@@ -131,11 +141,14 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 
 
 ```python
-display(HTML("<table><tr><td><img src='Images/example_cplex.svg'></td><td><img src='Images/example_gurobi.svg'></td></tr></table>"))
+make_row = lambda x : "<tr>"+"".join([f"<td>{elem}</td>" for elem in x])+"</tr>"
+cols = ("cplex", "gurobi")
+imgs = [f"<img src='Images/example_{x}.svg'>" for x in cols]
+display(HTML(f"<table>{make_row(cols)}{make_row(imgs)}</table>"))
 ```
 
 
-<table><tr><td><img src='Images/example_cplex.svg'></td><td><img src='Images/example_gurobi.svg'></td></tr></table>
+<table><tr><td>cplex</td><td>gurobi</td></tr><tr><td><img src='Images/example_cplex.svg'></td><td><img src='Images/example_gurobi.svg'></td></tr></table>
 
 
 # Results
@@ -156,12 +169,12 @@ def get_results(edges, nodes, solver, network_type, num_in=10, num_meas=10):
 
 ## Erdos networks
 
-The PKN given to CARNIVAL is generated with `igraph::erdos.renyi.game()` function from [igraph](https://igraph.org/) package.
+The Erdos-Renyi PKNs were generated using `igraph::erdos.renyi.game` function, with three times the number of edges given the number of nodes in the PKN. Figure below shows the results of these benchmarks. Both solvers (cplex and gurobi), return the same number of solutions and the same best value of objective function. Where the two solvers differ is in the execution time and memory consumption. We see in figure below that execution time of CARNIVAL when using gurobi solver is much better when compared to using cplex as the solver. Similarly for memory consumption, we see that gurobi has lower usage, except for the largest three PKNs.
 
 
 ```python
 col_names = ["Execution time [min]", "Memory [MB]", "Obj. value", "Number of solutions"]
-num_nodes = np.arange(50, 550, 50)
+num_nodes = np.arange(50, 1000, 50)
 df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos") for x in num_nodes], columns=col_names)
 df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos") for x in num_nodes], columns=col_names)
 
@@ -189,7 +202,7 @@ fig.suptitle("Erdos networks")
 
 ## Powerlaw networks
 
-The PKN given to CARNIVAL is generated with `igraph::static.power.law.game()` function from [igraph](https://igraph.org/) package.
+The powerlaw PKNs were generated using `igraph::static.power.law.game` function, with four times the number of edges given the number of nodes in the PKN. Figure below shows a similar results to the benchmarks with Erdos-Renyi PKNs, namely gurobi outperforms cplex with respect to execution time and memry consumption. The same number of solutions was given by CARNIVAL with cplex and gurobi, as well as the best objective function value.
 
 
 ```python
@@ -219,3 +232,7 @@ fig.suptitle("Powerlaw networks")
 
 ![png](main.py_files/main.py_11_1.png)
 
+
+# Discussion
+
+The benchmarks ran so far indicate that gurobi is a better ILP solver for CARNIVAL, though benchmarks on larger networks need to be run. The repository [https://github.com/saezlab/BenchmarkGurobi](https://github.com/saezlab/BenchmarkGurobi) contains the report on these benchmarks and a snakemake pipeline to reproduce all the results.

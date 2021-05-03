@@ -119,6 +119,7 @@ rule export_notebook:
     params:
         fmt = lambda wildcards : "markdown" if wildcards.fmt == "md" else wildcards.fmt
     shell:
+        "sed -i \"s/matplotlib notebook/matplotlib inline/\" {input[0]} && "
         "jupyter-nbconvert --to {params.fmt} --execute {input[0]}"
 
 rule save_env:
