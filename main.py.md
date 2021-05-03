@@ -28,8 +28,8 @@ snakemake --profile Slurm --latency-wait 60"
 
 
 ```python
-%matplotlib notebook
-# %matplotlib inline
+# %matplotlib notebook
+%matplotlib inline
 %load_ext rpy2.ipython
 from IPython.display import HTML, display
 import matplotlib.pyplot as plt
@@ -98,11 +98,7 @@ nx.draw(g, pos, ax, with_labels=True)
 ```
 
 
-    <IPython.core.display.Javascript object>
-
-
-
-<div id='de46c0f7-4f24-4fd3-a43d-d4abde23d55b'></div>
+![png](main.py_files/main.py_3_0.png)
 
 
 
@@ -123,18 +119,14 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 ```
 
 
-    <IPython.core.display.Javascript object>
-
-
-
-<div id='788a7511-07ff-42eb-ba03-ade29cd95b24'></div>
-
-
-
 
 
     <BarContainer object of 3 artists>
 
+
+
+
+![png](main.py_files/main.py_4_1.png)
 
 
 
@@ -185,18 +177,14 @@ fig.suptitle("Erdos networks")
 ```
 
 
-    <IPython.core.display.Javascript object>
-
-
-
-<div id='e1251504-c9c0-49d9-a223-a0abd94f2b0f'></div>
-
-
-
 
 
     Text(0.5, 0.98, 'Erdos networks')
 
+
+
+
+![png](main.py_files/main.py_9_1.png)
 
 
 ## Powerlaw networks
@@ -222,16 +210,12 @@ fig.suptitle("Powerlaw networks")
 ```
 
 
-    <IPython.core.display.Javascript object>
-
-
-
-<div id='1c600e87-f4ac-4b74-a88e-88355a3d967c'></div>
-
-
-
 
 
     Text(0.5, 0.98, 'Powerlaw networks')
 
+
+
+
+![png](main.py_files/main.py_11_1.png)
 
