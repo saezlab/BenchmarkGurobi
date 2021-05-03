@@ -4,6 +4,7 @@ Output*/
 Benchmarks/
 Figures/
 *.tar.gz
+config.json
 gurobi.log
 
 # Python

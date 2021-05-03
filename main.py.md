@@ -131,9 +131,8 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 ![png](main.py_files/main.py_4_1.png)
 
 
-cplex | gurobi
-- | -
-<img src="Images/example_cplex.svg" alt="cplex" width="200"/> | <img src="Images/example_gurobi.svg" alt="gurobi" width="200"/>
+Cplex on the left and gurobi on the right
+<img src="Images/example_cplex.svg" alt="cplex" width="200"/>  <img src="Images/example_gurobi.svg" alt="gurobi" width="200"/>
 
 # Results
 
@@ -190,7 +189,7 @@ The PKN given to CARNIVAL is generated with `igraph::static.power.law.game()` fu
 
 
 ```python
-col_names = ["Execution time", "Memory", "Obj. value", "Number of solutions"]
+col_names = ["Execution time [min]", "Memory [MB]", "Obj. value", "Number of solutions"]
 num_nodes = np.arange(50, 400, 50)
 df_gurobi = pd.DataFrame([get_results(4*x, x, "gurobi", "Powerlaw") for x in num_nodes], columns=col_names)
 df_cplex = pd.DataFrame([get_results(4*x, x, "cplex", "Powerlaw") for x in num_nodes], columns=col_names)

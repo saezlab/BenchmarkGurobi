@@ -1,10 +1,13 @@
 
+import json
+from os import path, makedirs
 import socket
 
 if "bioquant" in socket.gethostname():
-    shell.prefix("module load numlib/gurobi;")
+    shell.prefix("module load numlib/gurobi math/lpsolve math/cbc;")
 
-configfile: "solvers.json"
+if not path.isdir("Logs"): makedirs("Logs")
+if not path.isdir("Images"): makedirs("Images")
 
 rule all:
     input:
@@ -43,17 +46,36 @@ rule omnipath_input:
 rule install_carnival:
     output:
         ".carnival"
+    params:
+        url = "git@github.com:BartoszBartmanski/CARNIVAL.git",
+        branch = "gurobi"
     shell:
-        "./Scripts/install_carnival.R {output}"
+        "R --slave -e 'devtools::install_github(\"{params.url}\", "
+        "ref=\"{params.branch}\", dependencies=FALSE)' && touch {output}"
+
+rule gen_config:
+    output:
+        "config.json"
+    shell:
+        "Scripts/gen_config.sh {output}"
+
+def get_solver(wildcards, input):
+    if path.isfile(input[1]):
+        with open(input[1]) as fh:
+            return json.load(fh)[wildcards.solver]
+    else:
+        return ""
 
 rule use_carnival:
     input:
-        "Output/{dataset}/carnival_input.Rds"
+        "Output/{dataset}/carnival_input.Rds",
+        "config.json",
+        ".carnival"
     output:
         "Output/{dataset}/{solver}/result.Rds",
         "Output/{dataset}/{solver}/network_solution.dot"
     params:
-        solver_path = lambda wildcards : config[wildcards.solver]
+        solver_path = get_solver
     shadow: 
         "shallow"
     benchmark:
@@ -61,7 +83,7 @@ rule use_carnival:
     log:
         "Output/{dataset}/{solver}/log.txt"
     shell:
-        "Rscript Scripts/use_carnival.R {input} {output[0]} {wildcards.solver} {params.solver_path} > {log} 2>&1"
+        "Rscript Scripts/use_carnival.R {input[0]} {output[0]} {wildcards.solver} {params.solver_path} > {log} 2>&1"
 
 rule use_dot:
     input:
