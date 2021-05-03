@@ -23,16 +23,15 @@ conda env create -p ./conda_env --file conda_env.yml
 
 To generate this notebook run snakemake:
 ```
-snakemake -j10 --cluster "sbatch -c1 --mem 5G -t 2:00:00"
+snakemake --profile Slurm --latency-wait 60"
 ```
 
 
 ```python
-# %matplotlib notebook
-%matplotlib inline
+%matplotlib notebook
+# %matplotlib inline
 %load_ext rpy2.ipython
-from IPython.display import Image
-import graphviz
+from IPython.display import HTML, display
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
@@ -41,7 +40,6 @@ import pydotplus
 from pyvis.network import Network
 import rpy2.robjects as robjects
 from rpy2.robjects import pandas2ri
-from IPython.core.display import display, HTML
 pandas2ri.activate()
 readRDS = robjects.r['readRDS']
 
@@ -100,7 +98,11 @@ nx.draw(g, pos, ax, with_labels=True)
 ```
 
 
-![png](main.py_files/main.py_3_0.png)
+    <IPython.core.display.Javascript object>
+
+
+
+<div id='de46c0f7-4f24-4fd3-a43d-d4abde23d55b'></div>
 
 
 
@@ -121,6 +123,14 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 ```
 
 
+    <IPython.core.display.Javascript object>
+
+
+
+<div id='788a7511-07ff-42eb-ba03-ade29cd95b24'></div>
+
+
+
 
 
     <BarContainer object of 3 artists>
@@ -128,11 +138,13 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 
 
 
-![png](main.py_files/main.py_4_1.png)
+```python
+display(HTML("<table><tr><td><img src='Images/example_cplex.svg'></td><td><img src='Images/example_gurobi.svg'></td></tr></table>"))
+```
 
 
-Cplex on the left and gurobi on the right
-<img src="Images/example_cplex.svg" alt="cplex" width="200"/>  <img src="Images/example_gurobi.svg" alt="gurobi" width="200"/>
+<table><tr><td><img src='Images/example_cplex.svg'></td><td><img src='Images/example_gurobi.svg'></td></tr></table>
+
 
 # Results
 
@@ -157,7 +169,7 @@ The PKN given to CARNIVAL is generated with `igraph::erdos.renyi.game()` functio
 
 ```python
 col_names = ["Execution time [min]", "Memory [MB]", "Obj. value", "Number of solutions"]
-num_nodes = np.arange(50, 500, 50)
+num_nodes = np.arange(50, 550, 50)
 df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos") for x in num_nodes], columns=col_names)
 df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos") for x in num_nodes], columns=col_names)
 
@@ -173,14 +185,18 @@ fig.suptitle("Erdos networks")
 ```
 
 
+    <IPython.core.display.Javascript object>
+
+
+
+<div id='e1251504-c9c0-49d9-a223-a0abd94f2b0f'></div>
+
+
+
 
 
     Text(0.5, 0.98, 'Erdos networks')
 
-
-
-
-![png](main.py_files/main.py_9_1.png)
 
 
 ## Powerlaw networks
@@ -206,12 +222,16 @@ fig.suptitle("Powerlaw networks")
 ```
 
 
+    <IPython.core.display.Javascript object>
+
+
+
+<div id='1c600e87-f4ac-4b74-a88e-88355a3d967c'></div>
+
+
+
 
 
     Text(0.5, 0.98, 'Powerlaw networks')
 
-
-
-
-![png](main.py_files/main.py_11_1.png)
 
