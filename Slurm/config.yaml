@@ -1,4 +1,5 @@
 
 jobs: 20
-cluster: "sbatch -t {resources.time_min} --mem {resources.mem_mb} -c {resources.cpus} -o Logs/{rule}_%j.log -e Logs/{rule}_%j.log"
+cluster: "sbatch -t {resources.time_min} --mem {resources.mem_mb} -c {resources.cpus} -o Logs/{rule}_%j.log -e Logs/{rule}_%j.log --parsable"
+cluster-status: "Slurm/status.py"
 default-resources: [cpus=1, mem_mb=1000, time_min=60]

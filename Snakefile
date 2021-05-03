@@ -68,7 +68,6 @@ def get_solver(wildcards, input):
 
 def get_time(wildcards):
     num_edges = int(wildcards.dataset.split("/")[1].split("_")[0].strip("E"))
-    print(num_edges)
     return int(15 + num_edges/500)
 
 rule use_carnival:
