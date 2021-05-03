@@ -66,6 +66,11 @@ def get_solver(wildcards, input):
     else:
         return ""
 
+def get_time(wildcards):
+    num_edges = int(wildcards.dataset.split("/")[1].split("_")[0].strip("E"))
+    print(num_edges)
+    return int(15 + num_edges/500)
+
 rule use_carnival:
     input:
         "Output/{dataset}/carnival_input.Rds",
@@ -78,6 +83,8 @@ rule use_carnival:
         solver_path = get_solver
     shadow: 
         "shallow"
+    resources:
+        time_min = lambda wildcards, attempt : attempt * get_time(wildcards)
     benchmark:
         "Output/{dataset}/{solver}/benchmark.tsv"
     log:
