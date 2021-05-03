@@ -1,6 +1,7 @@
 
 # Data
-Output*/
+Output/
+Logs/
 Benchmarks/
 Figures/
 *.tar.gz

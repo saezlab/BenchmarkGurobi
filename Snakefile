@@ -4,7 +4,7 @@ from os import path, makedirs
 import socket
 
 if "bioquant" in socket.gethostname():
-    shell.prefix("module load numlib/gurobi math/lpsolve math/cbc;")
+    shell.prefix("module load numlib/gurobi math/lpsolve;")
 
 if not path.isdir("Logs"): makedirs("Logs")
 if not path.isdir("Images"): makedirs("Images")
@@ -83,7 +83,8 @@ rule use_carnival:
     log:
         "Output/{dataset}/{solver}/log.txt"
     shell:
-        "Rscript Scripts/use_carnival.R {input[0]} {output[0]} {wildcards.solver} {params.solver_path} > {log} 2>&1"
+        "Rscript Scripts/use_carnival.R {input[0]} {output[0]} "
+        "{wildcards.solver} {params.solver_path} 2>&1 | tee {log}"
 
 rule use_dot:
     input:

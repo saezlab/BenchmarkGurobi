@@ -15,5 +15,5 @@ clean_test:
 	rm -rf Output/*/E10_N8_I3_M2_S1_P2_2/
 
 wipe: clean
-	rm -rf Output/
+	rm -rf Output/ Logs/
 
