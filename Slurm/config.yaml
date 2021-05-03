@@ -1,4 +1,4 @@
 
 jobs: 20
 cluster: "sbatch -t {resources.time_min} --mem {resources.mem_mb} -c {resources.cpus} -o Logs/{rule}_%j.log -e Logs/{rule}_%j.log"
-default-resources: [cpus=1, mem_mb=1000, time_min=30]
+default-resources: [cpus=1, mem_mb=1000, time_min=60]

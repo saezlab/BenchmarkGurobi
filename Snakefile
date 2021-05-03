@@ -79,7 +79,7 @@ rule use_carnival:
     shadow: 
         "shallow"
     benchmark:
-        repeat("Output/{dataset}/{solver}/benchmark.tsv", 5)
+        "Output/{dataset}/{solver}/benchmark.tsv"
     log:
         "Output/{dataset}/{solver}/log.txt"
     shell:
