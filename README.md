@@ -200,6 +200,37 @@ fig.suptitle("Erdos networks")
 ![png](Images/main.py_9_1.png)
 
 
+Same as above, but for bigger networks
+
+
+```python
+col_names = ["Execution time [min]", "Memory [MB]", "Obj. value", "Number of solutions"]
+num_nodes = np.arange(1, 6) * 1000
+df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos") for x in num_nodes], columns=col_names)
+df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos") for x in num_nodes], columns=col_names)
+
+fig, axs = plt.subplots(1, 4, figsize=(10, 4))
+fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
+for i, x in enumerate(col_names):
+    axs[i].plot(3*num_nodes, df_gurobi[x], "o-")
+    axs[i].plot(3*num_nodes, df_cplex[x], "s--")
+    axs[i].set_xlabel("Number of edges")
+    axs[i].set_title(x)
+fig.legend(axs[-1].lines, ["gurobi", "cplex"], loc="lower center", ncol=2)
+fig.suptitle("Erdos networks")
+```
+
+
+
+
+    Text(0.5, 0.98, 'Erdos networks')
+
+
+
+
+![png](Images/main.py_11_1.png)
+
+
 ## Powerlaw networks
 
 The powerlaw PKNs were generated using `igraph::static.power.law.game` function, with four times the number of edges given the number of nodes in the PKN. Figure below shows a similar results to the benchmarks with Erdos-Renyi PKNs, namely gurobi outperforms cplex with respect to execution time and memry consumption. The same number of solutions was given by CARNIVAL with cplex and gurobi, as well as the best objective function value.
@@ -230,7 +261,7 @@ fig.suptitle("Powerlaw networks")
 
 
 
-![png](Images/main.py_11_1.png)
+![png](Images/main.py_13_1.png)
 
 
 # Discussion
