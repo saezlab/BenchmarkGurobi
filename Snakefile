@@ -129,6 +129,12 @@ rule export_notebook:
         "sed -i \"s/matplotlib notebook/matplotlib inline/\" {input[0]} && "
         "jupyter-nbconvert --to {params.fmt} {params.images} --execute {input[0]}"
 
+rule rulegraph:
+    output:
+        "Images/rulegraph.svg"
+    shell:
+        "snakemake --rulegraph all | dot -Tsvg > {output}"
+
 rule save_env:
     output:
         "conda_env.yml"
