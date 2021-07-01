@@ -1,10 +1,4 @@
 
-install_carnival_devel:
-	R --slave -e "devtools::install_github('https://github.com/saezlab/CARNIVAL.git', dependencies = FALSE)"
-
-install_carnival_gurobi:
-	R --slave -e "devtools::install_github('git@github.com:BartoszBartmanski/CARNIVAL.git', ref='gurobi', dependencies = FALSE)"
-
 conda_env.yml:
 	conda env export -n bioquant_devel --file $@
 

@@ -1,13 +1,15 @@
 
 import json
 from os import path, makedirs
-import socket
+from shutil import which
 
-if "bioquant" in socket.gethostname():
+if which("module") is not None:
     shell.prefix("module load numlib/gurobi math/lpsolve;")
 
 if not path.isdir("Logs"): makedirs("Logs")
 if not path.isdir("Images"): makedirs("Images")
+
+configfile: "config.json"
 
 rule all:
     input:
@@ -19,52 +21,30 @@ rule all:
 
 rule test:
     input:
-        expand("Output/{network}/E10_N8_I3_M2_S1_P2_2/{solver}/result.Rds", 
+        expand("Output/{network}/E10_N8_I3_M2_S1/{solver}_N1/result.Rds", 
                 solver=["lpSolve", "cbc", "cplex", "gurobi"], 
                 network=["Powerlaw", "Erdos"])
 
 rule igraph_input:
     output:
-        "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/carnival_input.Rds",
-        "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/interactions.csv",
-        "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/graph.Rds",
-        "Output/{network}/E{edges}_N{nodes}_I{inputs}_M{meas}_S{seed}_P{exp_in}_{exp_out}/graph.dot"
-    script:
-        "Scripts/generate_igraph_input.R"
-
-rule omnipath_input:
-    input:
-        "Input/measurments.csv"
-    output:
-        "Output/Omnipath/measurments.csv",
-        "Output/Omnipath/pkn.csv",
-        "Output/Omnipath/input.csv",
-        "Output/Omnipath/carnival_input.Rds"
-    script:
-        "Scripts/generate_omnipath_input.R"
+        "Output/{network}/E{e}_N{n}_I{i}_M{m}_S{seed}/carnival_input.h5",
+        "Output/{network}/E{e}_N{n}_I{i}_M{m}_S{seed}/carnival_input.dot"
+    params:
+        network = "{e} {n} {i} {m} {network}"
+    shell:
+        "Scripts/gen_igraph_input.R {params.network} {output[0]} {wildcards.seed}"
 
 rule install_carnival:
     output:
-        ".carnival"
+        "Logs/carnival.log"
     params:
-        url = "git@github.com:BartoszBartmanski/CARNIVAL.git",
-        branch = "gurobi"
+        install=(f"\"{config['INSTALL']['URL']}\", "
+                 f"ref=\"{config['INSTALL']['ref']}\", "
+                 f"force={config['INSTALL']['force']}, "
+                 f"dependencies={config['INSTALL']['dependencies']}")
     shell:
-        "R --slave -e 'devtools::install_github(\"{params.url}\", "
-        "ref=\"{params.branch}\", dependencies=FALSE)' && touch {output}"
-
-rule gen_config:
-    output:
-        "config.json"
-    shell:
-        "Scripts/gen_config.sh {output}"
-
-def get_solver(wildcards, input):
-    if path.isfile(input[1]):
-        with open(input[1]) as fh:
-            return json.load(fh)[wildcards.solver]
-    else:
-        return ""
+        "R --slave -e 'devtools::install_github({params.install})' 2>&1 | "
+        "tee {output}"
 
 def get_time(wildcards):
     num_edges = int(wildcards.dataset.split("/")[1].split("_")[0].strip("E"))
@@ -72,33 +52,34 @@ def get_time(wildcards):
 
 rule use_carnival:
     input:
-        "Output/{dataset}/carnival_input.Rds",
-        "config.json",
-        ".carnival"
+        "Output/{dataset}/carnival_input.h5",
+        "Logs/carnival.log"
     output:
-        "Output/{dataset}/{solver}/result.Rds",
-        "Output/{dataset}/{solver}/network_solution.dot"
+        "Output/{dataset}/{solver}_N{nodes}/result.Rds"
     params:
-        solver_path = get_solver
-    shadow: 
-        "shallow"
+        distributed = lambda wildcards : int(int(wildcards.nodes) > 1)
     resources:
-        time_min = lambda wildcards, attempt : attempt * get_time(wildcards)
+        time_min = lambda wildcards, attempt : attempt * get_time(wildcards),
+        nodes = lambda wildcards : wildcards.nodes,
+        partition = lambda wildcards : 
+            "multi" if int(wildcards.nodes) > 1 else "single",
+        extra = lambda wildcards : 
+            "--constraint=gurobi" if int(wildcards.nodes) > 1 else ""
     benchmark:
-        "Output/{dataset}/{solver}/benchmark.tsv"
+        "Output/{dataset}/{solver}_N{nodes}/benchmark.tsv"
     log:
-        "Output/{dataset}/{solver}/log.txt"
+        "Output/{dataset}/{solver}_N{nodes}/log.txt"
     shell:
         "Rscript Scripts/use_carnival.R {input[0]} {output[0]} "
-        "{wildcards.solver} {params.solver_path} 2>&1 | tee {log}"
+        "{wildcards.solver} config.json {params.distributed} 2>&1 | tee {log}"
 
 rule use_dot:
     input:
         "Output/{filepath}.dot"
     output:
-        "Output/{filepath}.{filetype}"
+        "Output/{filepath}.svg"
     shell:
-        "dot {input} -T {wildcards.filetype} > {output}"
+        "dot {input} -T svg > {output}"
 
 rule example_cplex:
     input:

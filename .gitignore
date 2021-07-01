@@ -5,7 +5,6 @@ Logs/
 Benchmarks/
 Figures/
 *.tar.gz
-config.json
 gurobi.log
 
 # Python
@@ -19,6 +18,4 @@ solvers.json
 *.sif
 
 # Misc
-.carnival
-notes.md
-
+*.swp

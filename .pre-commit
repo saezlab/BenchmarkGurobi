@@ -2,6 +2,9 @@
 
 # Copy/link this script to .git/hooks with (ln -s ../../.pre-commit .git/hooks/pre-commit)
 
-conda env export -n bioquant_devel --file conda_env.yml
-git add conda_env.yml
+ENV_NAME="bioquant_devel"
+ENV_FILE="conda_env.yml"
+
+conda env export -n ${ENV_NAME} -f ${ENV_FILE}
+git add ${ENV_NAME}
 
