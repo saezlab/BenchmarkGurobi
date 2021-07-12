@@ -9,6 +9,7 @@ gurobi.log
 
 # Python
 .ipynb_checkpoints/
+Scripts/__pycache__/
 
 # Snakemake
 .snakemake

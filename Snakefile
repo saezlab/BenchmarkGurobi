@@ -15,11 +15,11 @@ configfile: "config.json"
 
 rule all:
     input:
-        "main.py.md"
+        "main.py.md",
     output:
         "README.md"
     shell:
-        "cp {input} {output}"
+        "cp {input[0]} {output}"
 
 rule igraph_input:
     output:
@@ -78,12 +78,14 @@ rule test:
 rule erdos_benchmarks:
     input:
         [f"Output/Erdos/E{3*n}_N{n}_I10_M10_S1/{s}_N1/result.Rds" for n, s 
-                in product(range(50, 2000, 50), ["cbc", "cplex", "gurobi"])]
+                in product(range(50, 2000, 50), ["cplex", "gurobi"])],
+        [f"Output/Erdos/E{3*n}_N{n}_I10_M10_S1/{s}_N1/result.Rds" for n, s
+                in product(range(1000, 6000, 1000), ["cplex", "gurobi"])]
 
 rule powerlaw_benchmarks:
     input:
         [f"Output/Powerlaw/E{4*n}_N{n}_I10_M10_S1/{s}_N1/result.Rds" for n, s 
-                in product(range(50, 1000, 50), ["cbc", "cplex", "gurobi"])]
+                in product(range(50, 1000, 50), ["cplex", "gurobi"])]
 
 rule distributed_benchmarks:
     input:
@@ -93,7 +95,9 @@ rule distributed_benchmarks:
 rule export_notebook:
     input:
         "main.py.ipynb",
-        expand("Images/example_{solver}.svg", solver=("cplex", "gurobi"))
+        rules.erdos_benchmarks.input,
+        rules.powerlaw_benchmarks.input,
+        rules.distributed_benchmarks.input
     output:
         "main.py.{fmt}"
     params:
@@ -123,3 +127,11 @@ rule save_env:
     shell:
         "conda env export -n bioquant_devel --file {output}"
     
+rule setup_precommit:
+    input:
+        ".pre-commit"
+    output:
+        ".git/hooks/pre-commit"
+    shell:
+        "ln -s ../../{input} {output}"
+
