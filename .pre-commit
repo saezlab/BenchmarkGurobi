@@ -6,5 +6,5 @@ ENV_NAME="bioquant_devel"
 ENV_FILE="conda_env.yml"
 
 conda env export -n ${ENV_NAME} -f ${ENV_FILE}
-git add ${ENV_NAME}
+git add ${ENV_FILE}
 
