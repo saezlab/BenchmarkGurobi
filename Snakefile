@@ -27,6 +27,8 @@ rule igraph_input:
         "Output/{network}/E{e}_N{n}_I{i}_M{m}_S{seed}/carnival_input.dot"
     params:
         network = "{e} {n} {i} {m} {network}"
+    resources:
+        time_min = lambda wildcards, attempt : attempt * 60
     shell:
         "Scripts/gen_igraph_input.R {params.network} {output[0]} {wildcards.seed}"
 
@@ -87,7 +89,7 @@ rule erdos_benchmarks:
 rule powerlaw_benchmarks:
     input:
         [f"Output/Powerlaw/E{4*n}_N{n}_I10_M10_S1/{s}_N1/result.Rds" for n, s 
-                in product(range(50, 1000, 50), ["cplex", "gurobi"])]
+                in product(range(50, 400, 50), ["cplex", "gurobi"])]
 
 rule distributed_benchmarks:
     input:
