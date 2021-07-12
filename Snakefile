@@ -60,7 +60,9 @@ rule use_carnival:
         partition = lambda wildcards : 
             "multi" if int(wildcards.nodes) > 1 else "single",
         extra = lambda wildcards : 
-            "--constraint=gurobi" if int(wildcards.nodes) > 1 else ""
+            "--constraint=gurobi" if int(wildcards.nodes) > 1 else "",
+        load = lambda wildcards : 
+            1 if int(wildcards.nodes) > 1 else 0
     benchmark:
         "Output/{dataset}/{solver}_N{nodes}/benchmark.tsv"
     log:
@@ -96,7 +98,6 @@ rule export_notebook:
     input:
         "main.py.ipynb",
         rules.erdos_benchmarks.input,
-        rules.powerlaw_benchmarks.input,
         rules.distributed_benchmarks.input
     output:
         "main.py.{fmt}"

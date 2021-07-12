@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
+import pandas as pd
+
 
 class SolverLogs(object):
-    def __init__(self, filenames):
-        self.__data__ = {x: getattr(self, f"__get_{x}__")(y) for x, y in filenames.items()}
+    def __init__(self, solver, filename):
+        self.__data__ = getattr(self, f"__get_{solver}__")(filename)
 
     def __getitem__(self, key):
         return self.__data__[key]
@@ -41,3 +43,23 @@ class SolverLogs(object):
                     sol_count = int(line.split(":")[0].split(" ")[-1])
         return {"objective_value": obj_val, "solution_count": sol_count}
 
+def get_results(edges, 
+                nodes, 
+                solver="gurobi", 
+                network_type="Erdos", 
+                num_in=10, 
+                num_meas=10, 
+                seed=0, 
+                parallel=1, 
+                path_prefix="Output"):
+
+    dirname = f"{path_prefix}/{network_type}/E{edges}_N{nodes}_I{num_in}_M{num_meas}_S{seed}/"
+
+    logs = SolverLogs(solver, f"{dirname}{solver}_N{parallel}/log.txt")
+    benchmarks = pd.read_csv(f"{dirname}{solver}_N{parallel}/benchmark.tsv", "\t")
+
+    res = {"Execution time [min]": benchmarks["s"].mean()/60, 
+           "Memory [MB]": benchmarks["max_rss"].mean(),
+           "Obj. value": logs["objective_value"], 
+           "Number of solutions": logs["solution_count"]}
+    return res
