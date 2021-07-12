@@ -1,9 +1,11 @@
 
 import json
+from itertools import product
 from os import path, makedirs
-from shutil import which
+import socket
 
-if which("module") is not None:
+
+if "uni-heidelberg" in socket.gethostname():
     shell.prefix("module load numlib/gurobi math/lpsolve;")
 
 if not path.isdir("Logs"): makedirs("Logs")
@@ -18,12 +20,6 @@ rule all:
         "README.md"
     shell:
         "cp {input} {output}"
-
-rule test:
-    input:
-        expand("Output/{network}/E10_N8_I3_M2_S1/{solver}_N1/result.Rds", 
-                solver=["lpSolve", "cbc", "cplex", "gurobi"], 
-                network=["Powerlaw", "Erdos"])
 
 rule igraph_input:
     output:
@@ -48,7 +44,7 @@ rule install_carnival:
 
 def get_time(wildcards):
     num_edges = int(wildcards.dataset.split("/")[1].split("_")[0].strip("E"))
-    return int(15 + num_edges/500)
+    return int(30 + num_edges/250)
 
 rule use_carnival:
     input:
@@ -73,29 +69,26 @@ rule use_carnival:
         "Rscript Scripts/use_carnival.R {input[0]} {output[0]} "
         "{wildcards.solver} config.json {params.distributed} 2>&1 | tee {log}"
 
-rule use_dot:
+rule test:
     input:
-        "Output/{filepath}.dot"
-    output:
-        "Output/{filepath}.svg"
-    shell:
-        "dot {input} -T svg > {output}"
+        expand("Output/{network}/E10_N8_I3_M2_S1/{solver}_N1/result.Rds", 
+                solver=["lpSolve", "cbc", "cplex", "gurobi"], 
+                network=["Powerlaw", "Erdos"])
 
-rule example_cplex:
+rule erdos_benchmarks:
     input:
-        "Output/Erdos/E300_N100_I10_M10_S1_P2_2/cplex/network_solution.svg"
-    output:
-        "Images/example_cplex.svg"
-    shell:
-        "cp {input} {output}"
+        [f"Output/Erdos/E{3*n}_N{n}_I10_M10_S1/{s}_N1/result.Rds" for n, s 
+                in product(range(50, 2000, 50), ["cbc", "cplex", "gurobi"])]
 
-rule example_gurobi:
+rule powerlaw_benchmarks:
     input:
-        "Output/Erdos/E300_N100_I10_M10_S1_P2_2/gurobi/network_solution.svg"
-    output:
-        "Images/example_gurobi.svg"
-    shell:
-        "cp {input} {output}"
+        [f"Output/Powerlaw/E{4*n}_N{n}_I10_M10_S1/{s}_N1/result.Rds" for n, s 
+                in product(range(50, 1000, 50), ["cbc", "cplex", "gurobi"])]
+
+rule distributed_benchmarks:
+    input:
+        [f"Output/Erdos/E3000_N1000_I10_M10_S1/gurobi_N{n}/result.Rds" for n 
+                in range(1, 10)] 
 
 rule export_notebook:
     input:
@@ -109,6 +102,14 @@ rule export_notebook:
     shell:
         "sed -i \"s/matplotlib notebook/matplotlib inline/\" {input[0]} && "
         "jupyter-nbconvert --to {params.fmt} {params.images} --execute {input[0]}"
+
+rule use_dot:
+    input:
+        "Output/{filepath}.dot"
+    output:
+        "Output/{filepath}.svg"
+    shell:
+        "dot {input} -T svg > {output}"
 
 rule rulegraph:
     output:

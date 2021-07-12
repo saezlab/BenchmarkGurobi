@@ -1,7 +1,7 @@
 {
     "INSTALL": {
         "URL": "git@github.com:BartoszBartmanski/CARNIVAL.git",
-        "ref": "8ac7c1d0b38c56612562ae9ca04752eae4c41284",
+        "ref": "63fd73973bc5232255275f833ba0a1326939f42d",
         "force": "TRUE",
         "dependencies": "FALSE"
     },
