@@ -6,6 +6,7 @@ Benchmarks/
 Figures/
 *.tar.gz
 gurobi.log
+cplex.log
 
 # Python
 .ipynb_checkpoints/

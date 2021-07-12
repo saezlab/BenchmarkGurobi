@@ -2,6 +2,9 @@
 conda_env.yml:
 	conda env export -n bioquant_devel --file $@
 
+.git/hooks/pre-commit:
+	ln -s ../../.pre-commit $@
+
 clean: 
 	rm -rf README.md main.py.md main.py_files/ conda_env.yml
 
