@@ -50,57 +50,20 @@ import pydotplus
 from pyvis.network import Network
 import rpy2.robjects as robjects
 from rpy2.robjects import pandas2ri
+from Scripts.read_logs import SolverLogs, get_results
+
+
 pandas2ri.activate()
 readRDS = robjects.r['readRDS']
-
-
-class SolverLogs(object):
-    def __init__(self, filenames):
-        self.__data__ = {x: getattr(self, f"__get_{x}__")(y) for x, y in filenames.items()}
-
-    def __getitem__(self, key):
-        return self.__data__[key]
-    
-    def get_data(self):
-        return self.__data__
-        
-    def __get_cbc__(self, path_to_log):
-        obj_val = 0
-        with open(path_to_log) as fh:
-            for line in fh:
-                if "Objective value:" in line:
-                    obj_val = float(line.split("Objective value:")[-1].strip("\n "))
-        return {"objective_value": obj_val, "solution_count": 1}
-    
-    def __get_cplex__(self, path_to_log):
-        obj_val = 0
-        sol_count = 0
-        with open(path_to_log) as fh:
-            for line in fh:
-                if "Objective = " in line:
-                    obj_val = float(line.split("Objective = ")[-1].strip("\n "))
-                if "Solution pool:" in line:
-                    sol_count = int(line.split(" ")[2])
-        return {"objective_value": obj_val, "solution_count": sol_count}
-
-    def __get_gurobi__(self, path_to_log):
-        obj_val = 0
-        sol_count = 0
-        with open(path_to_log) as fh:
-            for line in fh:
-                if "Best objective" in line:
-                    obj_val = float(line.split(",")[0].split("Best objective")[-1].strip("\n "))
-                if "Solution count" in line:
-                    sol_count = int(line.split(":")[0].split(" ")[-1])
-        return {"objective_value": obj_val, "solution_count": sol_count}
+plt.rcParams.update({"savefig.format": "svg", "savefig.transparent": True})
 ```
 
 # Example 
 
 
 ```python
-dirname = "Output/Erdos/E300_N100_I10_M10_S1_P2_2/"
-g = nx.drawing.nx_agraph.read_dot(f"{dirname}graph.dot")
+dirname = "Output/Erdos/E300_N100_I10_M10_S1/"
+g = nx.drawing.nx_agraph.read_dot(f"{dirname}carnival_input.dot")
 pos = nx.spring_layout(g, 2.5, iterations=100)
 fig, ax = plt.subplots(figsize=(10, 5))
 ax.set_title("PKN: 300 edges and 100 nodes")
@@ -113,11 +76,12 @@ nx.draw(g, pos, ax, with_labels=True)
 
 
 ```python
+dirname = "Output/Erdos/E600_N200_I10_M10_S1/"
 solvers = ("cbc", "cplex", "gurobi")
 titles = ("Execution time [min]", "Memory usage [MB]" , "Objective value", "Number of solutions")
 
-logs = SolverLogs({x: f"{dirname}{x}/log.txt" for x in solvers}).get_data()
-benchmarks = {x: pd.read_csv(f"{dirname}{x}/benchmark.tsv", "\t") for x in solvers}
+logs = {x: SolverLogs(x, f"{dirname}{x}_N1/log.txt").get_data() for x in solvers}
+benchmarks = {x: pd.read_csv(f"{dirname}{x}_N1/benchmark.tsv", "\t") for x in solvers}
 
 fig, axs = plt.subplots(1, 4, figsize=(10, 4))
 fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
@@ -153,82 +117,76 @@ display(HTML(f"<table>{make_row(cols)}{make_row(imgs)}</table>"))
 
 # Results
 
-
-```python
-def get_results(edges, nodes, solver, network_type, num_in=10, num_meas=10):
-    dirname = f"Output/{network_type}/E{edges}_N{nodes}_I{num_in}_M{num_meas}_S1_P2_2/"
-
-    logs = SolverLogs({solver: f"{dirname}{solver}/log.txt"}).get_data()
-    benchmarks = {solver: pd.read_csv(f"{dirname}{solver}/benchmark.tsv", "\t")}
-    res = [benchmarks[solver]["s"].mean()/60, 
-           benchmarks[solver]["max_rss"].mean(),
-           logs[solver]["objective_value"], 
-           logs[solver]["solution_count"]]
-    return res
-```
-
 ## Erdos networks
 
 The Erdos-Renyi PKNs were generated using `igraph::erdos.renyi.game` function, with three times the number of edges given the number of nodes in the PKN. Figure below shows the results of these benchmarks. Both solvers (cplex and gurobi), return the same number of solutions and the same best value of objective function. Where the two solvers differ is in the execution time and memory consumption. We see in figure below that execution time of CARNIVAL when using gurobi solver is much better when compared to using cplex as the solver. Similarly for memory consumption, we see that gurobi has lower usage, except for the largest three PKNs.
 
 
 ```python
-col_names = ["Execution time [min]", "Memory [MB]", "Obj. value", "Number of solutions"]
-num_nodes = np.arange(50, 1000, 50)
-df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos") for x in num_nodes], columns=col_names)
-df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos") for x in num_nodes], columns=col_names)
+num_nodes = np.arange(50, 1050, 50)
+df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos", seed=1) for x in num_nodes])
+df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos", seed=1) for x in num_nodes])
 
 fig, axs = plt.subplots(1, 4, figsize=(10, 4))
 fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
-for i, x in enumerate(col_names):
+for i, x in enumerate(df_gurobi.columns):
     axs[i].plot(3*num_nodes, df_gurobi[x], "o-")
     axs[i].plot(3*num_nodes, df_cplex[x], "s--")
     axs[i].set_xlabel("Number of edges")
     axs[i].set_title(x)
 fig.legend(axs[-1].lines, ["gurobi", "cplex"], loc="lower center", ncol=2)
 fig.suptitle("Erdos networks")
+fig.savefig("Images/benchmarks_erdos_small")
 ```
 
 
-
-
-    Text(0.5, 0.98, 'Erdos networks')
-
-
-
-
-![png](Images/main.py_9_1.png)
+![png](Images/main.py_7_0.png)
 
 
 Same as above, but for bigger networks
 
 
 ```python
-col_names = ["Execution time [min]", "Memory [MB]", "Obj. value", "Number of solutions"]
 num_nodes = np.arange(1, 6) * 1000
-df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos") for x in num_nodes], columns=col_names)
-df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos") for x in num_nodes], columns=col_names)
+df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos", seed=1) for x in num_nodes])
+df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos", seed=1) for x in num_nodes])
 
 fig, axs = plt.subplots(1, 4, figsize=(10, 4))
 fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
-for i, x in enumerate(col_names):
+for i, x in enumerate(df_gurobi.columns):
     axs[i].plot(3*num_nodes, df_gurobi[x], "o-")
     axs[i].plot(3*num_nodes, df_cplex[x], "s--")
     axs[i].set_xlabel("Number of edges")
     axs[i].set_title(x)
 fig.legend(axs[-1].lines, ["gurobi", "cplex"], loc="lower center", ncol=2)
 fig.suptitle("Erdos networks")
+fig.savefig("Images/benchmarks_erdos_medium")
 ```
 
 
-
-
-    Text(0.5, 0.98, 'Erdos networks')
-
+![png](Images/main.py_9_0.png)
 
 
 
-![png](Images/main.py_11_1.png)
+```python
+num_nodes = np.arange(1, 10)  # compute nodes on the cluster
+res = [get_results(3000, 1000, "gurobi", "Erdos", seed=1, parallel=x)
+       for x in range(1, 10)]
+df_gurobi = pd.DataFrame(res)
+
+fig, axs = plt.subplots(1, 4, figsize=(10, 4))
+fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
+for i, x in enumerate(df_gurobi.columns):
+    axs[i].plot(num_nodes, df_gurobi[x], "o-")
+    axs[i].set_xlabel("Compute nodes")
+    axs[i].set_title(x)
+    axs[i].set_xticks(num_nodes)
+fig.suptitle("Erdos networks")
+fig.savefig("Images/benchmarks_distributed")
+```
+
+
+![png](Images/main.py_10_0.png)
 
 
 ## Powerlaw networks
@@ -239,29 +197,23 @@ The powerlaw PKNs were generated using `igraph::static.power.law.game` function,
 ```python
 col_names = ["Execution time [min]", "Memory [MB]", "Obj. value", "Number of solutions"]
 num_nodes = np.arange(50, 400, 50)
-df_gurobi = pd.DataFrame([get_results(4*x, x, "gurobi", "Powerlaw") for x in num_nodes], columns=col_names)
-df_cplex = pd.DataFrame([get_results(4*x, x, "cplex", "Powerlaw") for x in num_nodes], columns=col_names)
+df_gurobi = pd.DataFrame([get_results(4*x, x, "gurobi", "Powerlaw", seed=1) for x in num_nodes])
+df_cplex = pd.DataFrame([get_results(4*x, x, "cplex", "Powerlaw", seed=1) for x in num_nodes])
 
 fig, axs = plt.subplots(1, 4, figsize=(10, 4))
 fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
-for i, x in enumerate(col_names):
+for i, x in enumerate(df_gurobi.columns):
     axs[i].plot(3*num_nodes, df_gurobi[x], "o-")
     axs[i].plot(3*num_nodes, df_cplex[x], "s--")
     axs[i].set_title(x)
     axs[i].set_xlabel("Number of edges")
 fig.legend(axs[-1].lines, ["gurobi", "cplex"], loc="lower center", ncol=2)
 fig.suptitle("Powerlaw networks")
+fig.savefig("Images/benchmarks_powerlaw_small")
 ```
 
 
-
-
-    Text(0.5, 0.98, 'Powerlaw networks')
-
-
-
-
-![png](Images/main.py_13_1.png)
+![png](Images/main.py_12_0.png)
 
 
 # Discussion
