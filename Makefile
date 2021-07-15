@@ -6,7 +6,7 @@ conda_env.yml:
 	ln -s ../../.pre-commit $@
 
 clean: 
-	rm -rf README.md main.py.md main.py_files/ conda_env.yml
+	rm -rf README.md main.py.md conda_env.yml Images/
 
 clean_test:
 	rm -rf Output/*/E10_N8_I3_M2_S1_P2_2/

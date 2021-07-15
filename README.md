@@ -27,15 +27,17 @@ Or follow the instructions on [Miniconda website](https://docs.conda.io/en/lates
 
 Then create a conda environment based on the `conda_env.yml` file in this repository using:
 ```
-conda env create -p ./conda_env --file conda_env.yml
+conda env create -n bioquant_devel -f conda_env.yml
 ```
 
 ## Snakemake
 
-To generate this notebook run snakemake:
+To generate this report run snakemake:
 ```
-snakemake --profile Slurm --latency-wait 60
+snakemake --profile Slurm --resources load=1
 ```
+
+## Load packages
 
 
 ```python
@@ -58,7 +60,7 @@ readRDS = robjects.r['readRDS']
 plt.rcParams.update({"savefig.format": "svg", "savefig.transparent": True})
 ```
 
-# Example 
+# Example
 
 
 ```python
@@ -103,18 +105,6 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 ![png](Images/main.py_4_1.png)
 
 
-
-```python
-make_row = lambda x : "<tr>"+"".join([f"<td>{elem}</td>" for elem in x])+"</tr>"
-cols = ("cplex", "gurobi")
-imgs = [f"<img src='Images/example_{x}.svg'>" for x in cols]
-display(HTML(f"<table>{make_row(cols)}{make_row(imgs)}</table>"))
-```
-
-
-<table><tr><td>cplex</td><td>gurobi</td></tr><tr><td><img src='Images/example_cplex.svg'></td><td><img src='Images/example_gurobi.svg'></td></tr></table>
-
-
 # Results
 
 ## Erdos networks
@@ -140,7 +130,7 @@ fig.savefig("Images/benchmarks_erdos_small")
 ```
 
 
-![png](Images/main.py_7_0.png)
+![png](Images/main.py_6_0.png)
 
 
 Same as above, but for bigger networks
@@ -164,29 +154,7 @@ fig.savefig("Images/benchmarks_erdos_medium")
 ```
 
 
-![png](Images/main.py_9_0.png)
-
-
-
-```python
-num_nodes = np.arange(1, 10)  # compute nodes on the cluster
-res = [get_results(3000, 1000, "gurobi", "Erdos", seed=1, parallel=x)
-       for x in range(1, 10)]
-df_gurobi = pd.DataFrame(res)
-
-fig, axs = plt.subplots(1, 4, figsize=(10, 4))
-fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
-for i, x in enumerate(df_gurobi.columns):
-    axs[i].plot(num_nodes, df_gurobi[x], "o-")
-    axs[i].set_xlabel("Compute nodes")
-    axs[i].set_title(x)
-    axs[i].set_xticks(num_nodes)
-fig.suptitle("Erdos networks")
-fig.savefig("Images/benchmarks_distributed")
-```
-
-
-![png](Images/main.py_10_0.png)
+![png](Images/main.py_8_0.png)
 
 
 ## Powerlaw networks
@@ -210,6 +178,32 @@ for i, x in enumerate(df_gurobi.columns):
 fig.legend(axs[-1].lines, ["gurobi", "cplex"], loc="lower center", ncol=2)
 fig.suptitle("Powerlaw networks")
 fig.savefig("Images/benchmarks_powerlaw_small")
+```
+
+
+![png](Images/main.py_10_0.png)
+
+
+## Distributed optimization
+
+Using gurobi distributed optimization
+
+
+```python
+num_nodes = np.arange(1, 10)  # compute nodes on the cluster
+res = [get_results(3000, 1000, "gurobi", "Erdos", seed=1, parallel=x)
+       for x in range(1, 10)]
+df_gurobi = pd.DataFrame(res)
+
+fig, axs = plt.subplots(1, 4, figsize=(10, 4))
+fig.subplots_adjust(wspace=0.4, left=0.07, right=0.93, bottom=0.2)
+for i, x in enumerate(df_gurobi.columns):
+    axs[i].plot(num_nodes, df_gurobi[x], "o-")
+    axs[i].set_xlabel("Compute nodes")
+    axs[i].set_title(x)
+    axs[i].set_xticks(num_nodes)
+fig.suptitle("Erdos networks")
+fig.savefig("Images/benchmarks_distributed")
 ```
 
 
