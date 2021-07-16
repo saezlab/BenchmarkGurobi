@@ -79,6 +79,11 @@ rule test:
                 solver=["lpSolve", "cbc", "cplex", "gurobi"], 
                 network=["Powerlaw", "Erdos"])
 
+rule example:
+    input:
+        expand("Output/Erdos/E600_N200_I10_M10_S1/{solver}_N1/result.Rds",
+                solver=["cbc", "cplex", "gurobi"])
+
 rule erdos_benchmarks:
     input:
         [f"Output/Erdos/E{3*n}_N{n}_I10_M10_S1/{s}_N1/result.Rds" for n, s 
@@ -99,7 +104,9 @@ rule distributed_benchmarks:
 rule export_notebook:
     input:
         "main.py.ipynb",
+        rules.example.input,
         rules.erdos_benchmarks.input,
+        rules.powerlaw_benchmarks.input,
         rules.distributed_benchmarks.input
     output:
         "main.py.{fmt}"
@@ -130,11 +137,3 @@ rule save_env:
     shell:
         "conda env export -n bioquant_devel --file {output}"
     
-rule setup_precommit:
-    input:
-        ".pre-commit"
-    output:
-        ".git/hooks/pre-commit"
-    shell:
-        "ln -s ../../{input} {output}"
-
