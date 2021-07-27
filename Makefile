@@ -5,6 +5,10 @@ conda_env.yml:
 .git/hooks/pre-commit:
 	ln -s ../../.pre-commit $@
 
+DATE = $(shell date +"%Y_%m_%d_%H_%M")
+new_archive:
+	mkdir -p Archive && tar -zcvf Archive/output_${DATE}.tar.gz Output/
+
 clean: 
 	rm -rf README.md main.py.md conda_env.yml Images/
 
