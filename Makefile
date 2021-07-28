@@ -1,6 +1,8 @@
 
+ENV_NAME=bq_dev
+
 conda_env.yml:
-	conda env export -n bioquant_devel --file $@
+	conda env export -n ${ENV_NAME} --file $@
 
 .git/hooks/pre-commit:
 	ln -s ../../.pre-commit $@

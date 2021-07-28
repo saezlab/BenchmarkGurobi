@@ -135,5 +135,5 @@ rule save_env:
     output:
         "conda_env.yml"
     shell:
-        "conda env export -n bioquant_devel --file {output}"
+        "conda env export -n bq_env -f {output}"
     
