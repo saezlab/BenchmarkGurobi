@@ -104,6 +104,7 @@ rule distributed_benchmarks:
 rule export_notebook:
     input:
         "main.py.ipynb",
+        rules.test.input,
         rules.example.input,
         rules.erdos_benchmarks.input,
         rules.powerlaw_benchmarks.input,
