@@ -27,7 +27,7 @@ Or follow the instructions on [Miniconda website](https://docs.conda.io/en/lates
 
 Then create a conda environment based on the `conda_env.yml` file in this repository using:
 ```
-conda env create -n bioquant_devel -f conda_env.yml
+conda env create -n bq_dev -f conda_env.yml
 ```
 
 ## Snakemake
