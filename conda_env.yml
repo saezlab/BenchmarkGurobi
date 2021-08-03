@@ -46,7 +46,6 @@ dependencies:
   - cairo=1.16.0=h9f066cc_1006
   - certifi=2021.5.30=py38h578d9bd_0
   - cffi=1.14.5=py38ha65f79e_0
-  - coincbc=2.10.5=hab63836_1
   - curl=7.71.1=he644dc0_3
   - cycler=0.10.0=py_2
   - dbus=1.13.6=hfdff14a_1
@@ -430,7 +429,6 @@ dependencies:
     - idna==2.10
     - latexcodec==2.0.1
     - ortools==8.2.8710
-    - protobuf==3.17.3
     - psutil==5.8.0
     - pulp==2.4
     - pybtex==0.24.0
@@ -446,4 +444,4 @@ dependencies:
     - typing-extensions==3.7.4.3
     - urllib3==1.26.3
     - wrapt==1.12.1
-prefix: /net/data.isilon/ag-saez/bq_bbartmanski/Software/.miniconda3/envs/bq_dev
+prefix: /home/bartosz/.miniconda3/envs/bq_dev
