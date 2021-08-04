@@ -1,10 +1,4 @@
 {
-    "INSTALL": {
-        "URL": "git@github.com:BartoszBartmanski/CARNIVAL.git",
-        "ref": "0433505c1c19ab60671ee9fc59e07f429e698227",
-        "force": "TRUE",
-        "dependencies": "FALSE"
-    },
     "CARNIVAL_OPTS": {
         "WorkerPassword": "sXa78c2vYVK0ft4zYyqb",
         "timelimit": 3600,

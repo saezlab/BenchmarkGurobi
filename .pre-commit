@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 
-# Copy/link this script to .git/hooks with (ln -s ../../.pre-commit .git/hooks/pre-commit)
+ENV_NAME="bq"
+ENV_FILE_1="conda_env.yml"
+ENV_FILE_2="conda_env_simple.yml"
+R_ENV_FILE="renv.lock"
 
-ENV_NAME="bq_dev"
-ENV_FILE="conda_env.yml"
+conda env export -n ${ENV_NAME} -f ${ENV_FILE_1}
+conda env export -n ${ENV_NAME} -f ${ENV_FILE_2} --from-history
+if grep -q "pip:" ${ENV_FILE_1}; then 
+    sed -i -e '$d' ${ENV_FILE_2} && 
+        sed -n -e '/pip:/,$p' ${ENV_FILE_1} >> ${ENV_FILE_2}
+fi
 
-conda env export -n ${ENV_NAME} -f ${ENV_FILE}
-git add ${ENV_FILE}
+CONDA_SOURCE=${CONDA_EXE/bin\/conda/etc\/profile.d\/conda.sh}
 
+source ${CONDA_SOURCE} &&
+conda activate ${ENV_NAME} && 
+R --no-echo -e "renv::hydrate(); renv::snapshot()"
+
+git add ${ENV_FILE_1} ${ENV_FILE_2} ${R_ENV_FILE}

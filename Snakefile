@@ -32,18 +32,6 @@ rule igraph_input:
     shell:
         "Scripts/gen_igraph_input.R {params.network} {output[0]} {wildcards.seed}"
 
-rule install_carnival:
-    output:
-        "Logs/carnival.log"
-    params:
-        install=(f"\"{config['INSTALL']['URL']}\", "
-                 f"ref=\"{config['INSTALL']['ref']}\", "
-                 f"force={config['INSTALL']['force']}, "
-                 f"dependencies={config['INSTALL']['dependencies']}")
-    shell:
-        "R --slave -e 'devtools::install_github({params.install})' 2>&1 | "
-        "tee {output}"
-
 def get_time(wildcards):
     num_edges = int(wildcards.dataset.split("/")[1].split("_")[0].strip("E"))
     return int(30 + num_edges/250)
@@ -132,9 +120,3 @@ rule rulegraph:
     shell:
         "snakemake --rulegraph all | dot -Tsvg > {output}"
 
-rule save_env:
-    output:
-        "conda_env.yml"
-    shell:
-        "conda env export -n bq_env -f {output}"
-    
