@@ -38,8 +38,7 @@ def get_time(wildcards):
 
 rule use_carnival:
     input:
-        "Output/{dataset}/carnival_input.h5",
-        "Logs/carnival.log"
+        "Output/{dataset}/carnival_input.h5"
     output:
         "Output/{dataset}/{solver}_N{nodes}/result.Rds"
     params:

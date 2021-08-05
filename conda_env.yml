@@ -15,7 +15,6 @@ dependencies:
   - appdirs=1.4.4=pyh9f0ad1d_0
   - argon2-cffi=20.1.0=py38h497a2fe_2
   - async-timeout=3.0.1=py_1000
-  - async_generator=1.10=py_0
   - atk-1.0=2.36.0=h3371d22_4
   - attmap=0.13.0=pyhd8ed1ab_0
   - attrs=21.2.0=pyhd8ed1ab_0
@@ -24,7 +23,7 @@ dependencies:
   - backports.functools_lru_cache=1.6.4=pyhd8ed1ab_0
   - bcrypt=3.2.0=py38h497a2fe_1
   - binutils_impl_linux-64=2.36.1=h193b22a_2
-  - binutils_linux-64=2.36=hf3e587d_33
+  - binutils_linux-64=2.36=hf3e587d_0
   - bioconductor-annotate=1.68.0=r40hdfd78af_1
   - bioconductor-annotationdbi=1.52.0=r40hdfd78af_1
   - bioconductor-biobase=2.50.0=r40hd029910_1
@@ -44,9 +43,9 @@ dependencies:
   - bioconductor-s4vectors=0.28.1=r40hd029910_0
   - bioconductor-uniprot.ws=2.29.0=r40_0
   - bioconductor-viper=1.24.0=r40hdfd78af_1
-  - bleach=3.3.1=pyhd8ed1ab_0
-  - boto3=1.18.11=pyhd8ed1ab_0
-  - botocore=1.21.11=pyhd8ed1ab_0
+  - bleach=4.0.0=pyhd8ed1ab_0
+  - boto3=1.18.13=pyhd8ed1ab_0
+  - botocore=1.21.13=pyhd8ed1ab_0
   - brotlipy=0.7.0=py38h497a2fe_1001
   - bwidget=1.9.14=ha770c72_0
   - bzip2=1.0.8=h7f98852_4
@@ -86,12 +85,12 @@ dependencies:
   - freetype=2.10.4=h0708190_1
   - fribidi=1.0.10=h36c2ea0_0
   - ftputil=5.0.1=pyhd8ed1ab_0
-  - gcc_impl_linux-64=9.3.0=h70c0ae5_19
-  - gcc_linux-64=9.3.0=hf25ea35_33
+  - gcc_impl_linux-64=9.4.0=h03d3576_7
+  - gcc_linux-64=9.4.0=h391b98a_0
   - gdk-pixbuf=2.42.6=h04a7f16_0
   - gettext=0.19.8.1=h0b5b191_1005
-  - gfortran_impl_linux-64=9.3.0=hc4a2995_19
-  - gfortran_linux-64=9.3.0=hdc58fab_33
+  - gfortran_impl_linux-64=9.4.0=h0003116_7
+  - gfortran_linux-64=9.4.0=hf0ab688_0
   - ghostscript=9.18=1
   - giflib=5.2.1=h36c2ea0_2
   - gitdb=4.0.7=pyhd8ed1ab_0
@@ -104,7 +103,7 @@ dependencies:
   - google-auth=1.34.0=pyh6c4a22f_0
   - google-auth-httplib2=0.1.0=pyhd8ed1ab_0
   - google-cloud-core=1.7.2=pyh6c4a22f_0
-  - google-cloud-storage=1.19.0=py_0
+  - google-cloud-storage=1.41.0=pyh6c4a22f_0
   - google-crc32c=1.1.2=py38h8838a9a_0
   - google-resumable-media=1.3.3=pyh6c4a22f_0
   - googleapis-common-protos=1.53.0=py38h578d9bd_0
@@ -116,8 +115,8 @@ dependencies:
   - gstreamer=1.18.4=h76c114f_2
   - gtk2=2.24.33=h539f30e_1
   - gts=0.7.6=h64030ff_2
-  - gxx_impl_linux-64=9.3.0=hd87eabc_19
-  - gxx_linux-64=9.3.0=h3fbe746_33
+  - gxx_impl_linux-64=9.4.0=h03d3576_7
+  - gxx_linux-64=9.4.0=h0316aca_0
   - harfbuzz=2.8.2=h83ec7ef_0
   - httplib2=0.19.1=pyhd8ed1ab_0
   - icu=68.1=h58526e2_0
@@ -145,7 +144,6 @@ dependencies:
   - jupyter_highlight_selected_word=0.2.0=py38h578d9bd_1002
   - jupyter_latex_envs=1.4.6=pyhd8ed1ab_1002
   - jupyter_nbextensions_configurator=0.4.1=py38h578d9bd_2
-  - jupyterlab_pygments=0.1.2=pyh9f0ad1d_0
   - jupyterlab_widgets=1.0.0=pyhd8ed1ab_1
   - kernel-headers_linux-64=2.6.32=he073ed8_14
   - kiwisolver=1.3.1=py38h1fd1430_1
@@ -164,14 +162,14 @@ dependencies:
   - libevent=2.1.10=hcdb4288_3
   - libffi=3.3=h58526e2_2
   - libgcc=7.2.0=h69d50b8_2
-  - libgcc-devel_linux-64=9.3.0=h7864c58_19
-  - libgcc-ng=9.3.0=h2828fa1_19
+  - libgcc-devel_linux-64=9.4.0=hd854feb_7
+  - libgcc-ng=11.1.0=hc902ee8_7
   - libgd=2.3.2=h78a0170_0
-  - libgfortran-ng=9.4.0=h69a702a_6
-  - libgfortran5=9.4.0=h62347ff_6
+  - libgfortran-ng=11.1.0=h69a702a_7
+  - libgfortran5=11.1.0=h6c583b3_7
   - libgit2=1.1.1=h3974521_0
   - libglib=2.68.3=h3e27bee_0
-  - libgomp=9.3.0=h2828fa1_19
+  - libgomp=11.1.0=hc902ee8_7
   - libiconv=1.16=h516909a_0
   - liblapack=3.9.0=10_openblas
   - libllvm11=11.1.0=hf817b99_2
@@ -183,10 +181,11 @@ dependencies:
   - libpq=13.2=hfd2b0eb_2
   - libprotobuf=3.17.2=h780b84a_1
   - librsvg=2.50.7=hc3c00ef_0
+  - libsanitizer=9.4.0=h79bfe98_7
   - libsodium=1.0.18=h36c2ea0_1
   - libssh2=1.9.0=ha56f1ee_6
-  - libstdcxx-devel_linux-64=9.3.0=hb016644_19
-  - libstdcxx-ng=11.1.0=h56837e0_6
+  - libstdcxx-devel_linux-64=9.4.0=hd854feb_7
+  - libstdcxx-ng=11.1.0=h56837e0_7
   - libtiff=4.3.0=hf544144_1
   - libtool=2.4.6=h58526e2_1007
   - libuuid=2.32.1=h7f98852_1000
@@ -210,11 +209,9 @@ dependencies:
   - multidict=5.1.0=py38h497a2fe_1
   - mysql-common=8.0.25=ha770c72_2
   - mysql-libs=8.0.25=hfa10184_2
-  - nbclient=0.5.3=pyhd8ed1ab_0
   - nbconvert=5.6.1=py38h32f6830_1
   - nbformat=5.1.3=pyhd8ed1ab_0
   - ncurses=6.2=h58526e2_4
-  - nest-asyncio=1.5.1=pyhd8ed1ab_0
   - networkx=2.5=py_0
   - notebook=6.4.0=pyha770c72_0
   - nspr=4.30=h9c3ff4c_0
@@ -342,7 +339,7 @@ dependencies:
   - r-googledrive=2.0.0=r40hc72bb7e_0
   - r-googlesheets4=0.3.0=r40hc72bb7e_0
   - r-gtable=0.3.0=r40hc72bb7e_3
-  - r-haven=2.4.2=r40h2713e49_0
+  - r-haven=2.4.3=r40h2713e49_0
   - r-highr=0.9=r40hc72bb7e_0
   - r-hms=1.1.0=r40hc72bb7e_0
   - r-htmltools=0.5.1.1=r40h03ef668_0
@@ -498,7 +495,7 @@ dependencies:
   - xorg-xproto=7.0.31=h7f98852_1007
   - xz=5.2.5=h516909a_1
   - yaml=0.2.5=h516909a_0
-  - yarl=1.6.3=py38h497a2fe_2
+  - yarl=1.5.1=py38h1e0a361_0
   - zeromq=4.3.4=h9c3ff4c_0
   - zipp=3.5.0=pyhd8ed1ab_0
   - zlib=1.2.11=h516909a_1010
@@ -510,4 +507,4 @@ dependencies:
     - protobuf==3.17.3
     - ratelimiter==1.2.0.post0
     - smmap==4.0.0
-prefix: /home/bartosz/.miniconda3/envs/bq
+prefix: /net/data.isilon/ag-saez/bq_bbartmanski/Software/.miniconda3/envs/bq

@@ -5,27 +5,28 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - pygraphviz
-  - pyvis
-  - r-base=4.0.3
-  - bioconductor-carnival
-  - jupyter
-  - r-devtools
-  - python=3.8
+  - pip
+  - jupyter_contrib_nbextensions
   - bioconductor-omnipathr
+  - nbconvert=5.6.1
+  - snakemake
+  - pygraphviz
+  - r-renv
+  - jupyter
+  - graphviz
   - r-tidyverse
   - matplotlib
-  - graphviz
-  - jupyter_contrib_nbextensions
-  - bioconductor-rhdf5
-  - pandas
+  - python=3.8
   - rpy2
-  - scipy
-  - snakemake
-  - nbconvert=5.6.1
   - pydotplus
+  - bioconductor-rhdf5
+  - scipy
+  - pyvis
+  - pandas
+  - bioconductor-carnival
+  - r-base=4.0.3
   - python-graphviz
-  - r-renv
+  - r-devtools
   - pip:
     - absl-py==0.13.0
     - idna==2.10
@@ -33,4 +34,4 @@ dependencies:
     - protobuf==3.17.3
     - ratelimiter==1.2.0.post0
     - smmap==4.0.0
-prefix: /home/bartosz/.miniconda3/envs/bq
+prefix: /net/data.isilon/ag-saez/bq_bbartmanski/Software/.miniconda3/envs/bq

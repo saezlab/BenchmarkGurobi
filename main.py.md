@@ -60,6 +60,9 @@ readRDS = robjects.r['readRDS']
 plt.rcParams.update({"savefig.format": "svg", "savefig.transparent": True})
 ```
 
+    * Project '/net/data.isilon/ag-saez/bq_bbartmanski/Data/BenchmarkGurobi' loaded. [renv 0.14.0]
+
+
 # Example
 
 
@@ -94,6 +97,10 @@ axs[2].bar(solvers, [logs[x]["objective_value"] for x in solvers])
 axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 ```
 
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/612811921.py:6: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      benchmarks = {x: pd.read_csv(f"{dirname}{x}_N1/benchmark.tsv", "\t") for x in solvers}
+
+
 
 
 
@@ -102,7 +109,7 @@ axs[3].bar(solvers, [logs[x]["solution_count"] for x in solvers])
 
 
 
-![png](Images/main.py_4_1.png)
+![png](Images/main.py_4_2.png)
 
 
 # Results
@@ -129,8 +136,14 @@ fig.suptitle("Erdos networks")
 fig.savefig("Images/benchmarks_erdos_small")
 ```
 
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/193841409.py:2: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos", seed=1) for x in num_nodes])
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/193841409.py:3: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos", seed=1) for x in num_nodes])
 
-![png](Images/main.py_6_0.png)
+
+
+![png](Images/main.py_6_1.png)
 
 
 Same as above, but for bigger networks
@@ -153,8 +166,14 @@ fig.suptitle("Erdos networks")
 fig.savefig("Images/benchmarks_erdos_medium")
 ```
 
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/4101526601.py:2: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      df_gurobi = pd.DataFrame([get_results(3*x, x, "gurobi", "Erdos", seed=1) for x in num_nodes])
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/4101526601.py:3: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      df_cplex = pd.DataFrame([get_results(3*x, x, "cplex", "Erdos", seed=1) for x in num_nodes])
 
-![png](Images/main.py_8_0.png)
+
+
+![png](Images/main.py_8_1.png)
 
 
 ## Powerlaw networks
@@ -180,8 +199,14 @@ fig.suptitle("Powerlaw networks")
 fig.savefig("Images/benchmarks_powerlaw_small")
 ```
 
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/2277102413.py:3: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      df_gurobi = pd.DataFrame([get_results(4*x, x, "gurobi", "Powerlaw", seed=1) for x in num_nodes])
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/2277102413.py:4: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      df_cplex = pd.DataFrame([get_results(4*x, x, "cplex", "Powerlaw", seed=1) for x in num_nodes])
 
-![png](Images/main.py_10_0.png)
+
+
+![png](Images/main.py_10_1.png)
 
 
 ## Distributed optimization
@@ -206,8 +231,12 @@ fig.suptitle("Erdos networks")
 fig.savefig("Images/benchmarks_distributed")
 ```
 
+    /scratch/bq_bbartmanski/305654/ipykernel_15323/2675159952.py:2: FutureWarning: In a future version of pandas all arguments of read_csv except for the argument 'filepath_or_buffer' will be keyword-only
+      res = [get_results(3000, 1000, "gurobi", "Erdos", seed=1, parallel=x)
 
-![png](Images/main.py_12_0.png)
+
+
+![png](Images/main.py_12_1.png)
 
 
 # Discussion
