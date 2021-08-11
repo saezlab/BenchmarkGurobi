@@ -1,21 +1,13 @@
 #!/usr/bin/env bash
 
+source Scripts/update.sh
+
 ENV_NAME="bq"
 ENV_FILE_1="conda_env.yml"
 ENV_FILE_2="conda_env_simple.yml"
-R_ENV_FILE="renv.lock"
+RENV_FILE="renv.lock"
 
-conda env export -n ${ENV_NAME} -f ${ENV_FILE_1}
-conda env export -n ${ENV_NAME} -f ${ENV_FILE_2} --from-history
-if grep -q "pip:" ${ENV_FILE_1}; then 
-    sed -i -e '$d' ${ENV_FILE_2} && 
-        sed -n -e '/pip:/,$p' ${ENV_FILE_1} >> ${ENV_FILE_2}
-fi
+export_conda ${ENV_NAME} ${ENV_FILE_1} ${ENV_FILE_2}
+export_renv ${ENV_NAME} 'all'
 
-CONDA_SOURCE=${CONDA_EXE/bin\/conda/etc\/profile.d\/conda.sh}
-
-source ${CONDA_SOURCE} &&
-conda activate ${ENV_NAME} && 
-R --no-echo -e "renv::hydrate(); renv::snapshot()"
-
-git add ${ENV_FILE_1} ${ENV_FILE_2} ${R_ENV_FILE}
+git add ${ENV_FILE_1} ${ENV_FILE_2} ${RENV_FILE}
