@@ -38,13 +38,6 @@
       "RemoteSha": "963fbc1db2d038bfeab76abe792416908327c176",
       "Hash": "802b59720f14e5e2e9a88a6c2a66dd6e"
     },
-    "MASS": {
-      "Package": "MASS",
-      "Version": "7.3-54",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "0e59129db205112e3963904db67fd0dc"
-    },
     "Matrix": {
       "Package": "Matrix",
       "Version": "1.3-4",
@@ -233,26 +226,12 @@
       "Repository": "CRAN",
       "Hash": "61e4a10781dd00d7d81dd06ca9b94e95"
     },
-    "mgcv": {
-      "Package": "mgcv",
-      "Version": "1.8-36",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "93cc747b0e1ad882a4570463c3575c23"
-    },
     "mime": {
       "Package": "mime",
       "Version": "0.11",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "8974a907200fc9948d636fe7d85ca9fb"
-    },
-    "nlme": {
-      "Package": "nlme",
-      "Version": "3.1-152",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "35de1ce639f20b5e10f7f46260730c65"
     },
     "pillar": {
       "Package": "pillar",

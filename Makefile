@@ -15,7 +15,7 @@ conda_env_simple.yml: conda_env.yml
 	R -e "library(renv); renv::init()"
 
 renv.lock:
-	source Scripts/update.sh && export_renv ${ENV_NAME}
+	source Scripts/update.sh && export_renv ${ENV_NAME} implicit
 
 .git/hooks/pre-commit:
 	ln -s ../../.pre-commit $@
